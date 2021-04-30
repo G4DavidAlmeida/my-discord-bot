@@ -6,5 +6,6 @@ venv/
 
 .vscode
 
-audios/*
-!audios/.gitkeep
+static/**/*.*
+!static/**/*.gitkeep
+# !static/img/*

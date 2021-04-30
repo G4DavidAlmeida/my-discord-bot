@@ -5,8 +5,8 @@ import asyncio
 youtube_dl.utils.bug_reports_message = lambda: ''
 
 ytdl_format_options = {
-    'outtmpl': 'audios/%(extractor_key)s/%(id)s-%(title)s.%(ext)s',
-    'format': 'bestaudio/best',
+    'outtmpl': 'static/audios/%(extractor_key)s/%(id)s-%(title)s.%(ext)s',
+    'format': 'worstaudio/worst', # best, worst, bestvideo, worstvideo, bestaudio, worstaudio
     'restrictfilenames': True,
     'noplaylist': True,
     'nocheckcertificate': True,
@@ -25,7 +25,7 @@ ffmpeg_options = {
 ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
 
 class YTDLSource(discord.PCMVolumeTransformer):
-    def __init__(self, source, *, data, volume=0.5):
+    def __init__(self, source, *, data, volume=0.3):
         super().__init__(source, volume)
         self.data = data
         self.title = data.get('title')

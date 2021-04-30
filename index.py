@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from DiscordBot.Bot import Bot
 
 # só a importação garante que todos os serviços serão carregados
-from DiscordBot import loading_services
+from DiscordBot import config
 
 load_dotenv(dotenv_path='./env/.env')
 
