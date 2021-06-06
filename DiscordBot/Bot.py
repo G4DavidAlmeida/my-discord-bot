@@ -12,3 +12,10 @@ class Bot(object):
             cls._bot_instance = commands.Bot(command_prefix='!')
             # Put any initialization here.
         return cls._bot_instance
+
+bot = Bot()
+
+# general events
+@bot.event
+async def on_ready():
+    print('Bot discord is ready!')

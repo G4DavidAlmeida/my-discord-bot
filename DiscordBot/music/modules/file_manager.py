@@ -5,12 +5,15 @@ BASE_DIR = Path.cwd()
 class FileManager(object):
     @staticmethod
     def delete_music (filename):
-        try:
-            file = Path.joinpath(BASE_DIR, filename)
-            if file.is_file():
-                file.unlink()
-        except Exception as e:
-            print(e)
+        file = BASE_DIR.joinpath(filename)
+        file.is_file() and file.unlink()
+    
+    @staticmethod
+    def remove_list(list):
+        for filename in list:
+            filename = BASE_DIR.joinpath(filename)
+            filename.unlink()
+
 
 """
 with open(folder_name + '/' + local_filename, 'wb') as file:

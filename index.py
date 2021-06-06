@@ -1,12 +1,11 @@
 import os
+
+# load envs first of all
 from dotenv import load_dotenv
+load_dotenv(dotenv_path='./env/.env')
 
 from DiscordBot.Bot import Bot
-
-# só a importação garante que todos os serviços serão carregados
-from DiscordBot import config
-
-load_dotenv(dotenv_path='./env/.env')
+from DiscordBot import config # carrega todos os serviços
 
 # Get the API token from the .env file.
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")

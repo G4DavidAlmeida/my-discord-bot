@@ -1,13 +1,10 @@
 from DiscordBot.Bot import Bot
 
-import pprint
-log = pprint.PrettyPrinter(indent=2).pprint
-
 bot = Bot()
 
-@bot.event
+""" @bot.event
 async def on_ready():
-    print('Bot discord is ready!')
+    print('Bot discord is ready!') """
 
 """ @bot.event
 async def on_voice_state_update (ctx, *args, **kwargs):
