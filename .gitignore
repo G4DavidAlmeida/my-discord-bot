@@ -4,8 +4,6 @@ env/*
 
 venv/
 
-.vscode
-
 static/**/*.*
 !static/**/*.gitkeep
 # !static/img/*
