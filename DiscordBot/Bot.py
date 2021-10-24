@@ -1,10 +1,7 @@
 from discord.ext import commands
 
-class Bot(object):
-    """
-        Classe singleton, serve apenas para manter sempre o mesmo módulo do bot
-        carregado evitando a criação de mais de uma estancia do bot
-    """
+class Bot(commands.Bot):
+    """ commands.Bot instance with singletown """
     _bot_instance = None
 
     def __new__(cls):
@@ -18,4 +15,5 @@ bot = Bot()
 # general events
 @bot.event
 async def on_ready():
+    """ when bot is ready, hes call a message """
     print('Bot discord is ready!')

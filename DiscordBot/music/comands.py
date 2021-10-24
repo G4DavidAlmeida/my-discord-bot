@@ -10,6 +10,7 @@ bot = Bot()
 media_play = MusicPlay()
 
 async def comand_error(ctx, error: Exception):
+    """ default handle error """
     print(error)
     await ctx.send('**warning: an internal error has occurred**'.upper())
 

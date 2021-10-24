@@ -10,7 +10,7 @@ async def comand_error(ctx, error: Exception):
     print(error)
     await ctx.send('**warning: an internal error has occurred**'.upper())
 
-@bot.command(name='gif', help='To make the bot leave the voice channel')
+@bot.command(name='gif', help='the bot create send a gif')
 async def rand_gif(ctx, message=None):
     try:
         async with ctx.typing():

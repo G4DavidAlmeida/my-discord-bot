@@ -6,4 +6,8 @@ venv/
 
 static/**/*.*
 !static/**/*.gitkeep
+
+/examples/**/*
+!/examples/**/*.ipynb
+!/examples/**/*.gitkeep
 # !static/img/*
