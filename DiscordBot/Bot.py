@@ -6,7 +6,8 @@ class Bot(commands.Bot):
 
     def __new__(cls):
         if cls._bot_instance is None:
-            cls._bot_instance = commands.Bot(command_prefix='!')
+            cls._bot_instance = commands.Bot(
+                command_prefix=commands.when_mentioned_or('!'))
             # Put any initialization here.
         return cls._bot_instance
 

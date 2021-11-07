@@ -1,7 +1,11 @@
-async def enter_room (ctx):
+from discord.ext import commands
+
+
+async def enter_room(ctx: commands.Context):
+    """ faz o bot entrar na sala se aplicável """
     try:
         # se não connectado, então connectar
-        if not ctx.message.guild.voice_client:
+        if not ctx.voice_client:
             if not ctx.author.voice:
                 await ctx.send(f"{ctx.message.author.name} is not connected to a voice channel")
                 return False
