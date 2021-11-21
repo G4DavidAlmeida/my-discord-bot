@@ -60,25 +60,22 @@ ffmpeg_options = {
 ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
 
 class YTDLSource(discord.PCMVolumeTransformer):
-    """
-    https://discordpy.readthedocs.io/en/stable/api.html#discord.VoiceClient.send_audio_packet
-    """
-    def __init__(self, source, *, data, volume=1):
+    def __init__(self, source, *, data, volume=0.5):
         super().__init__(source, volume)
+
         self.data = data
+
         self.title = data.get('title')
-        self.url = ""
+        self.url = data.get('url')
 
     @classmethod
     async def from_url(cls, url, *, loop=None, stream=False):
-        """ ainda re-implementar """
         loop = loop or asyncio.get_event_loop()
         data = await loop.run_in_executor(None, lambda: ytdl.extract_info(url, download=not stream))
+
         if 'entries' in data:
-            filenames = [music['title'] if stream else \
-                ytdl.prepare_filename(music) for music in data['entries']]
-            return  filenames
-        else:
-            filename = data['title'] if stream else ytdl.prepare_filename(data)
-            return filename
-    
+            # take first item from a playlist
+            data = data['entries'][0]
+
+        filename = data['url'] if stream else ytdl.prepare_filename(data)
+        return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)

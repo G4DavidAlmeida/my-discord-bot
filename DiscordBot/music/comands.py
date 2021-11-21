@@ -1,10 +1,7 @@
-import discord
 from discord.ext import commands
 
 from DiscordBot.Bot import Bot
 from .modules.youtube_dl import YTDLSource
-from .modules.music_play import MusicPlay
-# from .modules.file_manager import FileManager
 from .utils import enter_room
 
 bot = Bot()
@@ -28,18 +25,15 @@ async def leave(ctx: commands.Context):
 async def play(ctx: commands.Context, url: str):
     """ faz o bot tocar uma música """
     if await enter_room(ctx) and ctx.voice_client:
-        # pode ser um str out list[str]
-        filenames = await YTDLSource.from_url(url, loop=bot.loop)
-
-        # verifica qual dos dois é e salva na lista
-        filename = filenames if isinstance(filenames, str) else filenames[0]
-
+        player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
         # verifica se já tem uma musica tocando
+
         if not ctx.voice_client.is_playing():
-            ctx.voice_client.play(discord.FFmpegPCMAudio(filename))
-            await ctx.send(f'**Now playing:** {filename}')
+            callback = lambda e: print(f'Player error: {e}') if e else None
+            ctx.voice_client.play(player, after=callback)
+            await ctx.send(f'**Now playing: {player.title}**')
         else:
-            await ctx.send(f'**New music added to queue: **{filename}')
+            await ctx.send(f'** New music added to queue: {player.title}**')
 
 @bot.command(name='pause', help='pause the song')
 async def pause(ctx: commands.Context):
@@ -66,6 +60,8 @@ async def stop(ctx: commands.Context):
         ctx.voice_client.stop()
     else:
         await ctx.send("Não tá tocando nada seu imbecil")
+    
+    print('hello')
 
 @bot.command(name='skip', help='Skip to the next music')
 async def skip (ctx: commands.Context):
