@@ -20,39 +20,54 @@ class MusicPlayer:
         self._channel = channel
         self._queue: List[discord.FFmpegPCMAudio] = []
 
+    def _after_callback(self, error):
+        if error:
+            print(f'Player error: {error}')
+        self._skip()
+
     def play(self, music: YTDLSource):
         """
-            adiciona uma musica a fila de musicas, caso a lista esteja vazia
-            o play é executado
+            adiciona uma musica a fila de musicas, caso nenhuma música
+            esteja sendo tocada no momento, iniciamos o play
         """
-
-        # a fila estando vazia, tocamos a musica antes de adicionar a queue
-        if not self._queue:
-            self._channel.play(music)
+        if not self._queue and not self._channel.is_playing():
+            self._channel.play(music, after=self._after_callback)
 
         self._queue.append(music)
 
     def pause(self):
         """ pausa a música atual """
-        self._channel.pause()
+        if self._channel.is_playing():
+            self._channel.pause()
 
-    def skip(self):
+    def resume(self):
+        """ faz a musica continuar de onde parou quando pausada """
+        if not self._channel.is_playing():
+            self._channel.resume()
+
+    def _skip(self):
         """ pula a música atual """
 
         # estando vazia, não fazemos nada
-        if self._queue:
-            self._channel.stop()
+        if self._queue and self._channel.is_playing():
             self._queue.pop(0)
 
         # se ainda houver mais um item, tocamos ele
         if self._queue:
-            self._channel.play(self._queue[0])
+            self._channel.play(self._queue[0], after=self._after_callback)
+
+    def skip(self):
+        """ pula o player para o próximo da lista """
+        if self._channel.is_playing():
+            self._channel.stop()
+
 
     def stop(self):
         """ limpa a fila de musica """
-        self._channel.stop()
-        self._queue.clear()
-        
+        if self._channel.is_playing():
+            self._queue.clear() # primeiro limpamos a fila
+            self._channel.stop() # e após isso, podemos parar o play
+
 
 class ManagerMPSession:
     """
