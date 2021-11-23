@@ -1,10 +1,8 @@
-# import discord
-
-from DiscordBot.Bot import Bot
 from .modules.giphy import GiphyAPI
+from DiscordBot.Bot import Bot # pylint: disable=import-error
 
 bot = Bot()
-Giphy = GiphyAPI()
+gif_api = GiphyAPI()
 
 async def comand_error(ctx, error: Exception):
     print(error)
@@ -14,7 +12,7 @@ async def comand_error(ctx, error: Exception):
 async def rand_gif(ctx, message=None):
     try:
         async with ctx.typing():
-            img = await Giphy.rand_gif(tag=message)
+            img = await gif_api.rand_gif(tag=message)
 
         await ctx.send(img)
     except Exception as e:

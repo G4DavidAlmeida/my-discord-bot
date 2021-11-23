@@ -25,6 +25,11 @@ class MusicPlayer:
             print(f'Player error: {error}')
         self._skip()
 
+    def play_list(self, musics: List[YTDLSource]):
+        """ o mesmo de self.play porém adiciona várias musicas """
+        for music in musics:
+            self.play(music)
+
     def play(self, music: YTDLSource):
         """
             adiciona uma musica a fila de musicas, caso nenhuma música
@@ -49,7 +54,7 @@ class MusicPlayer:
         """ pula a música atual """
 
         # estando vazia, não fazemos nada
-        if self._queue and self._channel.is_playing():
+        if self._queue:
             self._queue.pop(0)
 
         # se ainda houver mais um item, tocamos ele

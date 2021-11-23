@@ -42,6 +42,7 @@ ytdl_format_options = {
     'format': 'worstaudio/worst',
     'restrictfilenames': True,
     'default_search': 'auto',
+    'noplaylist': False,
     'nooverwrites': True,
     'source_address': '0.0.0.0', # bind to ipv4 since ipv6 addresses cause issues sometimes
     # 'postprocessors': [{
@@ -57,8 +58,6 @@ ffmpeg_options = {
     'options': '-vn'
 }
 
-ytdl = YoutubeDL(ytdl_format_options)
-
 class YTDLSource(discord.PCMVolumeTransformer):
     """
         Permite um maior controle sobre os audios executados
@@ -73,16 +72,26 @@ class YTDLSource(discord.PCMVolumeTransformer):
         self.url = data.get('url')
 
     @classmethod
-    def _create_source(cls, item, stream: bool):
+    def _create_source(cls, item, stream: bool, ytdl):
         filename = item['url'] if stream else ytdl.prepare_filename(item)
         return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=item)
 
     @classmethod
     async def from_url(cls, url, *, loop=None, stream=False):
+        """
+            faz o download da musica mediante a url passada
+            `url`: a url da música a ser baixada
+            `loop`: é o evento loop do bot,
+            `stream`; se verdadeiro, baixar o vídeo em stream
+            tornando o download rápido e eliminando a necessidade
+            de usar o sistema de arquivos (FileSystem)
+        """
         loop = loop or asyncio.get_event_loop()
-        data = await loop.run_in_executor(None, lambda: ytdl.extract_info(url, download=not stream))
+        with YoutubeDL(ytdl_format_options) as ytdl:
+            data = await loop.run_in_executor(
+                None, lambda: ytdl.extract_info(url, download=not stream))
 
-        if 'entries' in data:
-            return [cls._create_source(item, stream) for item in data['entries']]
+            if 'entries' in data:
+                return [cls._create_source(item, stream, ytdl) for item in data['entries']]
 
-        return cls._create_source(data, stream)
+            return cls._create_source(data, stream, ytdl)

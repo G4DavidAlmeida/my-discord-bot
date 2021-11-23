@@ -1,16 +1,22 @@
-import aiohttp, os, json
+import os
+import json
+import aiohttp
 
-class GiphyAPI:    
+
+class GiphyAPI:
     def __init__(self):
-        self._key = os.getenv('GIPHY_API_KEY')
         self._base = 'https://api.giphy.com/v1'
 
-    async def _make_request (self, req_type, url, *args, **kwargs):
+    def _get_key(self):
+        return os.getenv('GIPHY_API_KEY')
+
+    async def _make_request(self, req_type, url, *_, **kwargs):
         async with aiohttp.ClientSession() as session:
-            url = f'{self._base}/{req_type}/{url}?api_key={self._key}'
+            url = f'{self._base}/{req_type}/{url}?api_key={self._get_key()}'
 
             for name, value in kwargs.items():
-                if value is None: continue
+                if value is None:
+                    continue
                 url = f'{url}&{name}={value}'
 
             async with session.get(url) as response:
@@ -18,7 +24,7 @@ class GiphyAPI:
 
         return json_response
 
-    async def rand_gif (self, tag=None):
+    async def rand_gif(self, tag=None):
         response = await self._make_request('gifs', 'random', tag=tag)
 
         return response['data']['images']['original']['url']

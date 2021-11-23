@@ -17,6 +17,7 @@ async def comand_error(ctx: commands.Context, error: Exception):
 async def leave(ctx: commands.Context):
     """ faz o bot deixar a chamada de voz """
     if ctx.voice_client and ctx.voice_client.is_connected():
+        ManagerMPSession.remove(ctx.voice_client)
         await ctx.voice_client.disconnect()
     else:
         await ctx.send("The bot is not connected to a voice channel.")
@@ -29,7 +30,10 @@ async def play(ctx: commands.Context, url: str):
         music_play = ManagerMPSession.get_or_create(ctx.voice_client)
         player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
 
-        music_play.play(player)
+        if isinstance(player, list):
+            music_play.play_list(player)
+        else:
+            music_play.play(player)
         # if not ctx.voice_client.is_playing():
         #     callback = lambda e: print(f'Player error: {e}') if e else None
         #     ctx.voice_client.play(player, after=callback)
