@@ -1,40 +1,99 @@
+"""
+    MusicPlayer é uma classe de gerênciamento
+    de sessões de channel
+
+    o método .play() do VoiceChannel só toca uma música por vez,
+    para implementar uma fila de músicas, ManagerMPSession
+    ficará encarregada disso
+
+
+"""
 import discord
-from .youtube_dl import ffmpeg_options
-from .file_manager import FileManager
+from typing import Dict, List
+from .youtube_dl import YTDLSource
 
-class MusicPlay(object):
-    _can_continue = True
-    _queue_music = []
-    voice_client = None
+class MusicPlayer:
+    """
+        fica encarregada das funções básicas de um music player
+    """
+    def __init__(self, channel: discord.VoiceChannel):
+        self._channel = channel
+        self._queue: List[discord.FFmpegPCMAudio] = []
 
-    def next_track(self, error):
+    def play(self, music: YTDLSource):
         """
-            Preste atenção  ao tempo do código, esta função é executada
-            quando um musica acaba ou quando ela é parada por exemplo no comando
-            voice_client.stop(), isso se não observado poderá causar alguns bugs
-            ou erros, gerando um tempo de execução no código confuso
+            adiciona uma musica a fila de musicas, caso a lista esteja vazia
+            o play é executado
         """
-        error and print(error)
 
-        if self._can_continue and self.remove_from_queue():
-            self.voice_client.play(discord.FFmpegPCMAudio(self._queue_music[0],
-                before_options=ffmpeg_options['options']), after=self.next_track)
+        # a fila estando vazia, tocamos a musica antes de adicionar a queue
+        if not self._queue:
+            self._channel.play(music)
 
-    def remove_from_queue (self):
-        if len(self._queue_music) == 0:
-            return False
+        self._queue.append(music)
 
-        FileManager.delete_music(self._queue_music[0])
-        self._queue_music.pop(0)
+    def pause(self):
+        """ pausa a música atual """
+        self._channel.pause()
 
-        return len(self._queue_music) > 0
+    def skip(self):
+        """ pula a música atual """
+
+        # estando vazia, não fazemos nada
+        if self._queue:
+            self._channel.stop()
+            self._queue.pop(0)
+
+        # se ainda houver mais um item, tocamos ele
+        if self._queue:
+            self._channel.play(self._queue[0])
+
+    def stop(self):
+        """ limpa a fila de musica """
+        self._channel.stop()
+        self._queue.clear()
         
-    def clear_queue(self):
-        self._can_continue = False
-        FileManager.remove_list(self._queue_music)        
-        self._queue_music.clear()
-        self._can_continue = True
-        
-    
-    def add_music_to_queue(self, path):
-        self._queue_music.append(path)
+
+class ManagerMPSession:
+    """
+        tem como responsabilidade abstrair a correlação
+        entre o voicechannel e o MusicPlayer
+    """
+    _map: Dict[discord.VoiceChannel, MusicPlayer] = {}
+
+    @classmethod
+    def add_music_player(cls, channel: discord.VoiceChannel):
+        """ cria uma nova instância de music player e adiciona na map """
+        instance = MusicPlayer(channel)
+        cls._map[channel] = instance
+        return instance
+
+    @classmethod
+    def exist(cls, channel: discord.VoiceChannel):
+        """ verifica se há um MusicPlayer salvo referente a esse channel """
+        return channel in cls._map
+
+    @classmethod
+    def get(cls, channel: discord.VoiceChannel):
+        """
+            retorna uma instância de MusicPlayer mediante ao channel passado
+        """
+        return cls._map.get(channel)
+
+    @classmethod
+    def get_or_create(cls, channel: discord.VoiceChannel):
+        """
+            caso channel exista no mapeamento, retorna o mesmo, do contrário,
+            se não, cria uma nova instância e salva no map
+        """
+        return cls.get(channel) or cls.add_music_player(channel)
+
+    @classmethod
+    def remove(cls, channel):
+        """
+            remove o musicplayer do mapeamento referente ao channel
+
+            após a remoção, é feita a limpeza do musicplayer removido
+            (parar a execução da musica e limpar a fila)
+        """
+        return cls._map.pop(channel)

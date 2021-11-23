@@ -60,8 +60,6 @@ async def stop(ctx: commands.Context):
         ctx.voice_client.stop()
     else:
         await ctx.send("Não tá tocando nada seu imbecil")
-    
-    print('hello')
 
 @bot.command(name='skip', help='Skip to the next music')
 async def skip (ctx: commands.Context):

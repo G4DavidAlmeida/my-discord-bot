@@ -1,4 +1,4 @@
-import youtube_dl
+from youtube_dl import YoutubeDL
 import discord
 import asyncio
 
@@ -57,10 +57,14 @@ ffmpeg_options = {
     'options': '-vn'
 }
 
-ytdl = youtube_dl.YoutubeDL(ytdl_format_options)
+ytdl = YoutubeDL(ytdl_format_options)
 
 class YTDLSource(discord.PCMVolumeTransformer):
-    def __init__(self, source, *, data, volume=0.5):
+    """
+        Permite um maior controle sobre os audios executados
+        no .play() do VoiceChannel()
+    """
+    def __init__(self, source, *, data, volume=0.1):
         super().__init__(source, volume)
 
         self.data = data
@@ -73,9 +77,11 @@ class YTDLSource(discord.PCMVolumeTransformer):
         loop = loop or asyncio.get_event_loop()
         data = await loop.run_in_executor(None, lambda: ytdl.extract_info(url, download=not stream))
 
-        if 'entries' in data:
-            # take first item from a playlist
-            data = data['entries'][0]
+        def create_source(item):
+            filename = item['url'] if stream else ytdl.prepare_filename(data)
+            return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
 
-        filename = data['url'] if stream else ytdl.prepare_filename(data)
-        return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=data)
+        if 'entries' in data:
+            return [create_source(item) for item in data['entries']]
+        
+        return create_source(data)
