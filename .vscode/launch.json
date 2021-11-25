@@ -5,11 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "Run bot",
             "type": "python",
             "request": "launch",
             "program": "index.py",
             "console": "integratedTerminal"
-        }
+        },
+        {
+            "name": "Run pyhton test",
+            "type": "python",
+            "request": "launch",
+            "program": "tests.py",
+            "console": "integratedTerminal"
+        },
     ]
 }

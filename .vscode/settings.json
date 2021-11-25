@@ -6,5 +6,15 @@
         "ytdl"
     ],
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "editor.formatOnSave": true,
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./DiscordBot",
+        "-p",
+        "test*.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true
 }
