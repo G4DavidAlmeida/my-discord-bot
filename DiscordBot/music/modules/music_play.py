@@ -12,10 +12,12 @@ import discord
 from typing import Dict, List
 from .youtube_dl import YTDLSource
 
+
 class MusicPlayer:
     """
         fica encarregada das funções básicas de um music player
     """
+
     def __init__(self, channel: discord.VoiceChannel):
         self._channel = channel
         self._queue: List[discord.FFmpegPCMAudio] = []
@@ -66,12 +68,15 @@ class MusicPlayer:
         if self._channel.is_playing():
             self._channel.stop()
 
-
     def stop(self):
         """ limpa a fila de musica """
         if self._channel.is_playing():
-            self._queue.clear() # primeiro limpamos a fila
-            self._channel.stop() # e após isso, podemos parar o play
+            self._queue.clear()  # primeiro limpamos a fila
+            self._channel.stop()  # e após isso, podemos parar o play
+
+    @property
+    def queue_is_empty(self):
+        return len(self._queue) == 0
 
 
 class ManagerMPSession:

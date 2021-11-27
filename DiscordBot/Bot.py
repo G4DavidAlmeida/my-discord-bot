@@ -1,4 +1,8 @@
+"""
+    Bot base
+"""
 from discord.ext import commands
+
 
 class Bot(commands.Bot):
     """ commands.Bot instance with singletown """
@@ -11,9 +15,10 @@ class Bot(commands.Bot):
             # Put any initialization here.
         return cls._bot_instance
 
+
 bot = Bot()
 
-# general events
+
 @bot.event
 async def on_ready():
     """ when bot is ready, hes call a message """

@@ -16,3 +16,11 @@ async def enter_room(ctx: commands.Context):
     except Exception as e:
         print(e)
         return False
+
+
+async def music_message_add(ctx: commands.Context, music_play, music):
+    """ retorna uma mensagem baseado em quando a fila tá """
+    if music_play.queue_is_empty:
+        await ctx.send(f'**Tocando {music}**')
+    else:
+        await ctx.send(f'**{music} adicionado a fila**')

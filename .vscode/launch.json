@@ -10,13 +10,6 @@
             "request": "launch",
             "program": "index.py",
             "console": "integratedTerminal"
-        },
-        {
-            "name": "Run pyhton test",
-            "type": "python",
-            "request": "launch",
-            "program": "tests.py",
-            "console": "integratedTerminal"
-        },
+        }
     ]
 }

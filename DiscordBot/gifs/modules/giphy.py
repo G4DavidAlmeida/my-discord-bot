@@ -4,6 +4,8 @@ import aiohttp
 
 
 class GiphyAPI:
+    """ bridge interface ao giphyapi """
+
     def __init__(self):
         self._base = 'https://api.giphy.com/v1'
 
@@ -25,6 +27,7 @@ class GiphyAPI:
         return json_response
 
     async def rand_gif(self, tag=None):
+        """ gerá uma gif aleatória """
         response = await self._make_request('gifs', 'random', tag=tag)
 
         return response['data']['images']['original']['url']

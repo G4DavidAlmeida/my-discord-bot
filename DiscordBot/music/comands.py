@@ -3,9 +3,10 @@ from discord.ext import commands
 from DiscordBot.Bot import Bot
 from .modules.youtube_dl import YTDLSource
 from .modules.music_play import ManagerMPSession
-from .utils import enter_room
+from .utils import enter_room, music_message_add
 
 bot = Bot()
+
 
 async def comand_error(ctx: commands.Context, error: Exception):
     """ default handle error """
@@ -13,6 +14,8 @@ async def comand_error(ctx: commands.Context, error: Exception):
     await ctx.send('**warning: an internal error has occurred**'.upper())
 
 # deixar call
+
+
 @bot.command(name='leave', help='To make the bot leave the voice channel')
 async def leave(ctx: commands.Context):
     """ faz o bot deixar a chamada de voz """
@@ -22,24 +25,23 @@ async def leave(ctx: commands.Context):
     else:
         await ctx.send("The bot is not connected to a voice channel.")
 
-# tocar musica ou adicionar a fila
+
 @bot.command(name='play', help='Play a song')
 async def play(ctx: commands.Context, url: str):
     """ faz o bot tocar uma música """
     if await enter_room(ctx) and ctx.voice_client:
         music_play = ManagerMPSession.get_or_create(ctx.voice_client)
-        player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
 
-        if isinstance(player, list):
-            music_play.play_list(player)
-        else:
-            music_play.play(player)
-        # if not ctx.voice_client.is_playing():
-        #     callback = lambda e: print(f'Player error: {e}') if e else None
-        #     ctx.voice_client.play(player, after=callback)
-        #     await ctx.send(f'**Now playing: {player.title}**')
-        # else:
-        #     await ctx.send(f'** New music added to queue: {player.title}**')
+        async with ctx.typing():
+            player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
+
+            if isinstance(player, list):
+                music_play.play_list(player)
+                music_message_add(ctx, music_play, player[0])
+            else:
+                music_play.play(player)
+                music_message_add(ctx, music_play, player)
+
 
 @bot.command(name='pause', help='pause the song')
 async def pause(ctx: commands.Context):
@@ -49,7 +51,7 @@ async def pause(ctx: commands.Context):
         if music_play:
             music_play.pause()
 
-# resumir musica
+
 @bot.command(name='resume', help='Resumes the song')
 async def resume(ctx: commands.Context):
     """ se o bot deu pausa em uma música, da o re-play """
@@ -58,7 +60,7 @@ async def resume(ctx: commands.Context):
         if music_play:
             music_play.resume()
 
-# parar de tocar
+
 @bot.command(name='stop', help='Stops the song')
 async def stop(ctx: commands.Context):
     """ se o bot estiver tocando música, para sua execução e limpa a fila """
@@ -67,8 +69,9 @@ async def stop(ctx: commands.Context):
         if music_play:
             music_play.stop()
 
+
 @bot.command(name='skip', help='Skip to the next music')
-async def skip (ctx: commands.Context):
+async def skip(ctx: commands.Context):
     """ se o bot estiver tocando uma música, então ele pula a atual e vai para a próxima """
     if ctx.voice_client:
         music_play = ManagerMPSession.get(ctx.voice_client)

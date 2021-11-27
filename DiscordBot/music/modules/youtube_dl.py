@@ -2,8 +2,10 @@ from youtube_dl import YoutubeDL
 import discord
 import asyncio
 
+
 class MyLogger:
     """ classe de log do youtube dl customizada """
+
     def debug(self, msg):
         """ TODO entender pra que serve """
 
@@ -12,6 +14,7 @@ class MyLogger:
 
     def error(self, msg):
         """ TODO entender pra que serve """
+
 
 def my_hook(d):
     """ progress_hooks:
@@ -37,6 +40,7 @@ def my_hook(d):
     else:
         print('download failed')
 
+
 ytdl_format_options = {
     'outtmpl': 'static/audios/%(extractor_key)s/%(id)s-%(title)s.%(ext)s',
     'format': 'worstaudio/worst',
@@ -44,7 +48,8 @@ ytdl_format_options = {
     'default_search': 'auto',
     'noplaylist': False,
     'nooverwrites': True,
-    'source_address': '0.0.0.0', # bind to ipv4 since ipv6 addresses cause issues sometimes
+    # bind to ipv4 since ipv6 addresses cause issues sometimes
+    'source_address': '0.0.0.0',
     # 'postprocessors': [{
     #     'key': 'FFmpegExtractAudio',
     #     'preferredcodec': 'mp3',
@@ -58,11 +63,13 @@ ffmpeg_options = {
     'options': '-vn'
 }
 
+
 class YTDLSource(discord.PCMVolumeTransformer):
     """
         Permite um maior controle sobre os audios executados
         no .play() do VoiceChannel()
     """
+
     def __init__(self, source, *, data, volume=0.1):
         super().__init__(source, volume)
 
@@ -95,3 +102,6 @@ class YTDLSource(discord.PCMVolumeTransformer):
                 return [cls._create_source(item, stream, ytdl) for item in data['entries']]
 
             return cls._create_source(data, stream, ytdl)
+
+    def __str__(self) -> str:
+        return str(self.title)

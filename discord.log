@@ -1,1 +1,502 @@
-2021-11-23 22:00:09,066:INFO:discord.client: logging in using static token
+2021-11-26 20:10:38,021:INFO:discord.client: logging in using static token
+2021-11-26 20:10:41,820:DEBUG:discord.http: GET https://discord.com/api/v7/users/@me with None has returned 200
+2021-11-26 20:10:41,822:DEBUG:discord.http: GET https://discord.com/api/v7/users/@me has received {'id': '835280052475265034', 'username': 'Cornetão do David', 'avatar': '9454ef6df346485340f32ff08277134c', 'discriminator': '7214', 'public_flags': 0, 'flags': 0, 'bot': True, 'banner': None, 'banner_color': None, 'accent_color': None, 'bio': '', 'locale': 'en-US', 'mfa_enabled': False, 'email': None, 'verified': True}
+2021-11-26 20:10:41,854:DEBUG:discord.http: GET https://discord.com/api/v7/gateway with None has returned 200
+2021-11-26 20:10:41,855:DEBUG:discord.http: GET https://discord.com/api/v7/gateway has received {'url': 'wss://gateway.discord.gg'}
+2021-11-26 20:10:45,681:DEBUG:discord.gateway: Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+2021-11-26 20:10:45,682:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:10:45,682:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 10, 'd': {'heartbeat_interval': 41250, '_trace': ['["gateway-prd-main-gfgh",{"micros":0.0}]']}}
+2021-11-26 20:10:45,682:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:10:45,683:DEBUG:discord.client: Dispatching event socket_raw_send
+2021-11-26 20:10:45,684:DEBUG:discord.client: Dispatching event socket_raw_send
+2021-11-26 20:10:45,685:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
+2021-11-26 20:10:45,810:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:10:45,810:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:10:45,810:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:10:45,887:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:10:45,887:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'READY', 's': 1, 'op': 0, 'd': {'v': 6, 'user_settings': {}, 'user': {'verified': True, 'username': 'Cornetão do David', 'mfa_enabled': False, 'id': '835280052475265034', 'flags': 0, 'email': None, 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'session_id': '6e5b77b1e5528b248cc4461cff91cee7', 'relationships': [], 'private_channels': [], 'presences': [], 'guilds': [{'unavailable': True, 'id': '831151993628131340'}, {'unavailable': True, 'id': '835590252630114377'}, {'unavailable': True, 'id': '837452242742542368'}], 'guild_join_requests': [], 'geo_ordered_rtc_regions': ['brazil', 'buenos-aires', 'santiago', 'atlanta', 'us-east'], 'application': {'id': '835280052475265034', 'flags': 262144}, '_trace': ['["gateway-prd-main-gfgh",{"micros":75848,"calls":["discord-sessions-blue-prd-2-97",{"micros":75042,"calls":["start_session",{"micros":62956,"calls":["api-prd-main-cmt7",{"micros":54302,"calls":["get_user",{"micros":4712},"add_authorized_ip",{"micros":7124},"get_guilds",{"micros":6494},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}]']}}
+2021-11-26 20:10:45,887:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:10:45,887:INFO:discord.gateway: Shard ID None has connected to Gateway: ["gateway-prd-main-gfgh",{"micros":75848,"calls":["discord-sessions-blue-prd-2-97",{"micros":75042,"calls":["start_session",{"micros":62956,"calls":["api-prd-main-cmt7",{"micros":54302,"calls":["get_user",{"micros":4712},"add_authorized_ip",{"micros":7124},"get_guilds",{"micros":6494},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 6e5b77b1e5528b248cc4461cff91cee7).
+2021-11-26 20:10:45,917:DEBUG:discord.client: Dispatching event connect
+2021-11-26 20:10:45,917:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:10:45,918:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'GUILD_CREATE', 's': 2, 'op': 0, 'd': {'name': 'IntGest programadores', 'public_updates_channel_id': None, 'lazy': True, 'description': None, 'explicit_content_filter': 0, 'vanity_url_code': None, 'large': False, 'emojis': [], 'premium_progress_bar_enabled': False, 'mfa_level': 0, 'joined_at': '2021-04-23T23:10:13.095000+00:00', 'guild_scheduled_events': [], 'application_id': None, 'hub_type': None, 'stage_instances': [], 'splash': None, 'nsfw_level': 0, 'roles': [{'unicode_emoji': None, 'position': 0, 'permissions_new': '1071698660929', 'permissions': 104320577, 'name': '@everyone', 'mentionable': False, 'managed': False, 'id': '831151993628131340', 'icon': None, 'hoist': False, 'color': 0}, {'unicode_emoji': None, 'tags': {'bot_id': '835280052475265034'}, 'position': 1, 'permissions_new': '8', 'permissions': 8, 'name': 'IntGest David Bot', 'mentionable': False, 'managed': True, 'id': '835291501864157216', 'icon': None, 'hoist': False, 'color': 0}], 'icon': 'ed22fe5c34b8442b4c39da4b5c294395', 'system_channel_id': '831151994194231338', 'member_count': 4, 'channels': [{'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Canal de Texto Geral', 'id': '831151994194231336'}, {'type': 4, 'position': 1, 'permission_overwrites': [], 'name': 'Canais de Voz', 'id': '831151994194231337'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 0, 'permission_overwrites': [], 'parent_id': '831151994194231336', 'name': 'geral', 'last_message_id': '873205095121162270', 'id': '831151994194231338'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 0, 'permission_overwrites': [], 'parent_id': '831151994194231337', 'name': 'Geral', 'last_message_id': None, 'id': '831151994194231339', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 3, 'permission_overwrites': [], 'parent_id': '835532020725710900', 'name': 'chamada', 'last_message_id': None, 'id': '831153291098062898', 'bitrate': 64000}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 5, 'permission_overwrites': [], 'parent_id': '835532020725710900', 'name': 'texto', 'last_message_id': '835533631391793192', 'id': '832223928859623434'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 2, 'permission_overwrites': [], 'parent_id': '835531554746662982', 'name': 'chamada', 'last_message_id': None, 'id': '832337807170076743', 'bitrate': 64000}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 4, 'permission_overwrites': [], 'parent_id': '835531554746662982', 'name': 'texto', 'last_message_id': '860248487177224214', 'id': '832337844646838293'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 1, 'permission_overwrites': [], 'parent_id': '831151994194231336', 'name': 'comandos', 'last_message_id': '837321410762113094', 'id': '835321586088673290'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 3, 'permission_overwrites': [], 'parent_id': '835531217033625610', 'name': 'texto', 'last_message_id': '849266339072049183', 'id': '835531097785368606'}, {'type': 4, 'position': 2, 'permission_overwrites': [], 'name': 'intgest protocolo', 'id': '835531217033625610'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 1, 'permission_overwrites': [], 'parent_id': '835531217033625610', 'name': 'chamada', 'last_message_id': None, 'id': '835531330648277063', 'bitrate': 64000}, {'type': 4, 'position': 3, 'permission_overwrites': [], 'name': 'intgest sigl', 'id': '835531554746662982'}, {'type': 4, 'position': 4, 'permission_overwrites': [], 'name': 'motor legislativo', 'id': '835532020725710900'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 2, 'permission_overwrites': [], 'parent_id': '831151994194231336', 'name': 'memes', 'last_message_id': '855454734118944809', 'id': '847900830366957568'}, {'type': 4, 'position': 5, 'permission_overwrites': [], 'name': 'sistema legislativo', 'id': '861935966121492492'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 6, 'permission_overwrites': [], 'parent_id': '861935966121492492', 'name': 'geral', 'last_message_id': '861936030970413077', 'id': '861936009516023809'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 4, 'permission_overwrites': [], 'parent_id': '861935966121492492', 'name': 'conversa', 'last_message_id': None, 'id': '861936081511383090', 'bitrate': 64000}], 'nsfw': False, 'banner': None, 'default_message_notifications': 0, 'unavailable': False, 'premium_tier': 0, 'application_command_count': 0, 'afk_channel_id': None, 'stickers': [], 'threads': [], 'max_video_channel_users': 25, 'premium_subscription_count': 0, 'guild_hashes': {'version': 1, 'roles': {'omitted': False, 'hash': 'N9mA0GfTU14'}, 'metadata': {'omitted': False, 'hash': 'A74hGM38BPc'}, 'channels': {'omitted': False, 'hash': 'JrZHzAEHn9Q'}}, 'max_members': 250000, 'verification_level': 0, 'system_channel_flags': 0, 'rules_channel_id': None, 'discovery_splash': None, 'id': '831151993628131340', 'features': [], 'region': 'deprecated', 'preferred_locale': 'en-US', 'members': [{'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835291501864157216'], 'mute': False, 'joined_at': '2021-04-23T23:10:13.095000+00:00', 'hoisted_role': None, 'deaf': False}], 'voice_states': [], 'owner_id': '554493803927568384', 'embedded_activities': [], 'afk_timeout': 300, 'application_command_counts': {'3': 0, '2': 0, '1': 0}, 'presences': []}}
+2021-11-26 20:10:45,918:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:10:45,920:DEBUG:discord.client: Dispatching event guild_available
+2021-11-26 20:10:45,928:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:10:45,929:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'GUILD_CREATE', 's': 3, 'op': 0, 'd': {'name': 'Discord Developer - Área de testes', 'public_updates_channel_id': None, 'lazy': True, 'description': None, 'explicit_content_filter': 0, 'vanity_url_code': None, 'large': False, 'emojis': [], 'premium_progress_bar_enabled': False, 'mfa_level': 0, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'guild_scheduled_events': [], 'application_id': None, 'hub_type': None, 'stage_instances': [], 'splash': None, 'nsfw_level': 0, 'roles': [{'unicode_emoji': None, 'position': 0, 'permissions_new': '1071698660929', 'permissions': 104320577, 'name': '@everyone', 'mentionable': False, 'managed': False, 'id': '835590252630114377', 'icon': None, 'hoist': False, 'color': 0}, {'unicode_emoji': None, 'tags': {'bot_id': '835280052475265034'}, 'position': 1, 'permissions_new': '8', 'permissions': 8, 'name': 'David Bot', 'mentionable': False, 'managed': True, 'id': '835590701810712657', 'icon': None, 'hoist': False, 'color': 0}], 'icon': None, 'system_channel_id': '835590252630114380', 'member_count': 5, 'channels': [{'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Canais de texto', 'id': '835590252630114379'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 1, 'permission_overwrites': [], 'parent_id': '835590252630114379', 'name': 'geral', 'last_message_id': '912816533611368478', 'id': '835590252630114380'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 2, 'permission_overwrites': [], 'parent_id': '835590252630114379', 'name': 'clipes-e-destaques', 'last_message_id': None, 'id': '835590253074055168'}, {'type': 4, 'position': 3, 'permission_overwrites': [], 'name': 'Canais de voz', 'id': '835590253074055170'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 0, 'permission_overwrites': [], 'parent_id': '835590253074055170', 'name': 'Lobby', 'last_message_id': None, 'id': '835590253074055171', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 1, 'permission_overwrites': [], 'parent_id': '835590253074055170', 'name': 'Gaming', 'last_message_id': None, 'id': '835590253074055172', 'bitrate': 64000}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 3, 'permission_overwrites': [], 'parent_id': '835590252630114379', 'name': 'comandos', 'last_message_id': '913929044809121813', 'id': '851124508722069564'}], 'nsfw': False, 'banner': None, 'default_message_notifications': 0, 'unavailable': False, 'premium_tier': 0, 'application_command_count': 0, 'afk_channel_id': None, 'stickers': [], 'threads': [], 'max_video_channel_users': 25, 'premium_subscription_count': 0, 'guild_hashes': {'version': 1, 'roles': {'omitted': False, 'hash': '9YoNF7sKyYI'}, 'metadata': {'omitted': False, 'hash': 'sla+0FD6kHs'}, 'channels': {'omitted': False, 'hash': 'b8lwViPA+/U'}}, 'max_members': 250000, 'verification_level': 0, 'system_channel_flags': 0, 'rules_channel_id': None, 'discovery_splash': None, 'id': '835590252630114377', 'features': [], 'region': 'deprecated', 'preferred_locale': 'en-US', 'members': [{'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'bolinha de gorf desertor', 'id': '554493803927568384', 'discriminator': '1812', 'avatar': '144a59633c4874e909c4938447b8c59f'}, 'roles': [], 'mute': False, 'joined_at': '2021-04-24T18:57:20.814000+00:00', 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'bolinha de gorf desertor', 'id': '554493803927568384', 'discriminator': '1812', 'avatar': '144a59633c4874e909c4938447b8c59f'}, 'roles': [], 'mute': False, 'joined_at': '2021-04-24T18:57:20.814000+00:00', 'hoisted_role': None, 'deaf': False}, {'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}], 'voice_states': [{'user_id': '554493803927568384', 'suppress': False, 'session_id': 'fb27c80bb02f5253ce6a7b6e230eedb7', 'self_video': False, 'self_mute': False, 'self_deaf': False, 'request_to_speak_timestamp': None, 'mute': False, 'deaf': False, 'channel_id': '835590253074055172'}, {'user_id': '835280052475265034', 'suppress': False, 'session_id': '410613f3b847ae092cb036f25534befa', 'self_video': False, 'self_mute': False, 'self_deaf': False, 'request_to_speak_timestamp': None, 'mute': False, 'deaf': False, 'channel_id': '835590253074055172'}], 'owner_id': '554493803927568384', 'embedded_activities': [], 'afk_timeout': 300, 'application_command_counts': {'3': 0, '2': 0, '1': 0}, 'presences': []}}
+2021-11-26 20:10:45,929:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:10:45,930:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:10:45,931:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'GUILD_CREATE', 's': 4, 'op': 0, 'd': {'name': 'Problemas do Uri', 'public_updates_channel_id': None, 'lazy': True, 'description': None, 'explicit_content_filter': 0, 'vanity_url_code': None, 'large': False, 'emojis': [], 'premium_progress_bar_enabled': False, 'mfa_level': 0, 'joined_at': '2021-04-29T22:40:18.131000+00:00', 'guild_scheduled_events': [], 'application_id': None, 'hub_type': None, 'stage_instances': [], 'splash': None, 'nsfw_level': 0, 'roles': [{'unicode_emoji': None, 'position': 0, 'permissions_new': '1071698660929', 'permissions': 104320577, 'name': '@everyone', 'mentionable': False, 'managed': False, 'id': '837452242742542368', 'icon': None, 'hoist': False, 'color': 0}, {'unicode_emoji': None, 'tags': {'bot_id': '835280052475265034'}, 'position': 1, 'permissions_new': '8', 'permissions': 8, 'name': 'Cornetão do David', 'mentionable': False, 'managed': True, 'id': '837458300701900850', 'icon': None, 'hoist': False, 'color': 0}], 'icon': None, 'system_channel_id': '837452243380862988', 'member_count': 5, 'channels': [{'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Canais de Texto', 'id': '837452243380862986'}, {'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Canais de Voz', 'id': '837452243380862987'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 0, 'permission_overwrites': [], 'parent_id': '837452243380862986', 'name': 'geral', 'last_message_id': '843165001099378688', 'id': '837452243380862988'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 0, 'permission_overwrites': [], 'parent_id': '837452243380862987', 'name': 'Geral', 'last_message_id': None, 'id': '837452243380862989', 'bitrate': 64000}, {'type': 4, 'position': 1, 'permission_overwrites': [], 'name': 'Linguagens de Programações', 'id': '837452557239713823'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 1, 'permission_overwrites': [], 'parent_id': '837452557239713823', 'name': 'cpp', 'last_message_id': None, 'id': '837452865048019014'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 2, 'permission_overwrites': [], 'parent_id': '837452557239713823', 'name': 'php', 'last_message_id': None, 'id': '837452893442539600'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 3, 'permission_overwrites': [], 'parent_id': '837452557239713823', 'name': 'java', 'last_message_id': None, 'id': '837452924099493898'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 4, 'permission_overwrites': [], 'parent_id': '837452557239713823', 'name': 'python', 'last_message_id': None, 'id': '837452949030043698'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 5, 'permission_overwrites': [], 'parent_id': '837452557239713823', 'name': 'cs', 'last_message_id': None, 'id': '837453076616183868'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 6, 'permission_overwrites': [], 'parent_id': '837452557239713823', 'name': 'js', 'last_message_id': None, 'id': '837453127850000404'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 1, 'permission_overwrites': [], 'name': 'cpp', 'last_message_id': None, 'id': '837453656395743313', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 2, 'permission_overwrites': [], 'name': 'php', 'last_message_id': None, 'id': '837453695653511189', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 3, 'permission_overwrites': [], 'name': 'java', 'last_message_id': None, 'id': '837453767313588224', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 4, 'permission_overwrites': [], 'name': 'python', 'last_message_id': None, 'id': '837453921265123398', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 5, 'permission_overwrites': [], 'name': 'cs', 'last_message_id': None, 'id': '837453944015028265', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 6, 'permission_overwrites': [], 'name': 'js', 'last_message_id': None, 'id': '837453973731409950', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 7, 'permission_overwrites': [], 'parent_id': '837452243380862987', 'name': 'Problemas Uri', 'last_message_id': None, 'id': '837454070028959805', 'bitrate': 64000}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 7, 'permission_overwrites': [], 'parent_id': '837452243380862986', 'name': 'problemas-do-uri', 'last_message_id': None, 'id': '837454181824594000'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 8, 'permission_overwrites': [], 'parent_id': '837452243380862986', 'name': 'comandos', 'last_message_id': '837464433776525337', 'id': '837458841498025994'}, {'type': 4, 'position': 2, 'permission_overwrites': [], 'name': 'Sites de problemas', 'id': '843168930659172407'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 8, 'permission_overwrites': [], 'parent_id': '843168930659172407', 'name': 'URI', 'last_message_id': None, 'id': '843170111552487495', 'bitrate': 64000}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 9, 'permission_overwrites': [], 'parent_id': '843168930659172407', 'name': 'code-forces', 'last_message_id': None, 'id': '843170222415937547', 'bitrate': 64000}], 'nsfw': False, 'banner': None, 'default_message_notifications': 0, 'unavailable': False, 'premium_tier': 0, 'application_command_count': 0, 'afk_channel_id': None, 'stickers': [], 'threads': [], 'max_video_channel_users': 25, 'premium_subscription_count': 0, 'guild_hashes': {'version': 1, 'roles': {'omitted': False, 'hash': '6oFE8pqtO4A'}, 'metadata': {'omitted': False, 'hash': '6Ra11HHW6vM'}, 'channels': {'omitted': False, 'hash': '+MbLPlRacj8'}}, 'max_members': 250000, 'verification_level': 0, 'system_channel_flags': 0, 'rules_channel_id': None, 'discovery_splash': None, 'id': '837452242742542368', 'features': [], 'region': 'deprecated', 'preferred_locale': 'en-US', 'members': [{'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['837458300701900850'], 'mute': False, 'joined_at': '2021-04-29T22:40:18.131000+00:00', 'hoisted_role': None, 'deaf': False}], 'voice_states': [], 'owner_id': '750487822489747469', 'embedded_activities': [], 'afk_timeout': 300, 'application_command_counts': {'3': 0, '2': 0, '1': 0}, 'presences': []}}
+2021-11-26 20:10:45,931:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:10:45,932:DEBUG:discord.client: Dispatching event guild_available
+2021-11-26 20:10:45,932:DEBUG:discord.client: Dispatching event guild_available
+2021-11-26 20:10:47,936:DEBUG:discord.client: Dispatching event ready
+2021-11-26 20:11:15,891:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:15,892:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 5, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-11-26T23:11:15.718000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '913929931614846976', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-04-24T18:57:20.814000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '913929931715670057', 'flags': 0, 'embeds': [{'video': {'width': 1280, 'url': 'https://www.youtube.com/embed/PfwIpoVMvNs', 'height': 720}, 'url': 'https://www.youtube.com/watch?v=PfwIpoVMvNs', 'type': 'video', 'title': 'Adele - Oh My God (Official Lyric Video)', 'thumbnail': {'width': 1280, 'url': 'https://i.ytimg.com/vi/PfwIpoVMvNs/maxresdefault.jpg', 'proxy_url': 'https://images-ext-2.discordapp.net/external/Uz3g3DEMQybjXV3wuSeP9_GZ5RzwPDm51t1xC0EuXd4/https/i.ytimg.com/vi/PfwIpoVMvNs/maxresdefault.jpg', 'height': 720}, 'provider': {'url': 'https://www.youtube.com', 'name': 'YouTube'}, 'description': 'Lyric Video for "Oh My God" by Adele.\nShop the "Adele" collection here: http://shop.adele.com\n\nListen to "30" here: https://www.adele.com\n\nFollow Adele:\nFacebook - https://www.facebook.com/Adele \nTwitter - https://twitter.com/Adele \nInstagram - http://instagram.com/Adele\n\nLyrics\nI ain’t got too much time to spare\nBut I’ll make time for you to sh...', 'color': 16711680, 'author': {'url': 'https://www.youtube.com/channel/UComP_epzeKzvBX156r6pm1Q', 'name': 'AdeleVEVO'}}], 'edited_timestamp': None, 'content': '!play https://www.youtube.com/watch?v=PfwIpoVMvNs&list=RDCLAK5uy_lBNUteBRencHzKelu5iDHwLF6mYqjL-JU&start_radio=1&rv=beWg7rPSZ6Q', 'components': [], 'channel_id': '851124508722069564', 'author': {'username': 'bolinha de gorf desertor', 'public_flags': 0, 'id': '554493803927568384', 'discriminator': '1812', 'avatar': '144a59633c4874e909c4938447b8c59f'}, 'attachments': [], 'guild_id': '835590252630114377'}}
+2021-11-26 20:11:15,893:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:15,900:DEBUG:discord.client: Dispatching event message
+2021-11-26 20:11:15,902:DEBUG:discord.client: Dispatching event command
+2021-11-26 20:11:15,907:INFO:discord.voice_client: Connecting to voice...
+2021-11-26 20:11:15,908:INFO:discord.voice_client: Starting voice handshake... (connection attempt 1)
+2021-11-26 20:11:15,909:DEBUG:discord.gateway: Updating our voice state to {'op': 4, 'd': {'guild_id': 835590252630114377, 'channel_id': 835590253074055172, 'self_mute': False, 'self_deaf': False}}.
+2021-11-26 20:11:15,910:DEBUG:discord.client: Dispatching event socket_raw_send
+2021-11-26 20:11:16,047:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:16,048:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'VOICE_STATE_UPDATE', 's': 6, 'op': 0, 'd': {'member': {'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}, 'user_id': '835280052475265034', 'suppress': False, 'session_id': '6e5b77b1e5528b248cc4461cff91cee7', 'self_video': False, 'self_mute': False, 'self_deaf': False, 'request_to_speak_timestamp': None, 'mute': False, 'guild_id': '835590252630114377', 'deaf': False, 'channel_id': '835590253074055172'}}
+2021-11-26 20:11:16,048:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:16,049:DEBUG:discord.client: Dispatching event voice_state_update
+2021-11-26 20:11:16,633:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:16,633:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'VOICE_SERVER_UPDATE', 's': 7, 'op': 0, 'd': {'token': '7c881620b3a6f087', 'guild_id': '835590252630114377', 'endpoint': 'brazil7785.discord.media:443'}}
+2021-11-26 20:11:16,634:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:16,636:INFO:discord.voice_client: Voice handshake complete. Endpoint found brazil7785.discord.media
+2021-11-26 20:11:20,487:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 0, 'd': {'server_id': '835590252630114377', 'user_id': '835280052475265034', 'session_id': '6e5b77b1e5528b248cc4461cff91cee7', 'token': '7c881620b3a6f087'}}.
+2021-11-26 20:11:20,490:DEBUG:discord.gateway: Voice websocket frame received: {'op': 8, 'd': {'v': 4, 'heartbeat_interval': 13750.0}}
+2021-11-26 20:11:20,501:DEBUG:discord.gateway: Voice websocket frame received: {'op': 2, 'd': {'streams': [{'type': 'video', 'ssrc': 341584, 'rtx_ssrc': 341585, 'rid': '', 'quality': 0, 'active': False}], 'ssrc': 341583, 'port': 50001, 'modes': ['aead_aes256_gcm_rtpsize', 'aead_aes256_gcm', 'xsalsa20_poly1305_lite_rtpsize', 'xsalsa20_poly1305_lite', 'xsalsa20_poly1305_suffix', 'xsalsa20_poly1305'], 'ip': '185.41.140.20', 'experiments': ['bwe_conservative_link_estimate', 'bwe_remote_locus_client', 'fixed_keyframe_interval']}}
+2021-11-26 20:11:20,515:DEBUG:discord.gateway: received packet in initial_connection: b'F\x00\x01\x00179.108.0.107\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00/\x04'
+2021-11-26 20:11:20,516:DEBUG:discord.gateway: detected ip: 179.108.0.107 port: 12036
+2021-11-26 20:11:20,516:DEBUG:discord.gateway: received supported encryption modes: xsalsa20_poly1305_lite, xsalsa20_poly1305_suffix, xsalsa20_poly1305
+2021-11-26 20:11:20,516:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 1, 'd': {'protocol': 'udp', 'data': {'address': '179.108.0.107', 'port': 12036, 'mode': 'xsalsa20_poly1305_lite'}}}.
+2021-11-26 20:11:20,517:INFO:discord.gateway: selected the voice protocol for use (xsalsa20_poly1305_lite)
+2021-11-26 20:11:20,531:DEBUG:discord.gateway: Voice websocket frame received: {'op': 4, 'd': {'video_codec': 'H264', 'secret_key': [251, 245, 93, 174, 4, 135, 184, 95, 243, 183, 56, 254, 4, 100, 162, 179, 26, 234, 42, 40, 14, 157, 163, 117, 46, 40, 122, 236, 164, 245, 67, 143], 'mode': 'xsalsa20_poly1305_lite', 'media_session_id': '51809fcee4c466d35e418b0f6c859ef8', 'audio_codec': 'opus'}}
+2021-11-26 20:11:20,531:INFO:discord.gateway: received secret key for voice connection
+2021-11-26 20:11:20,532:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 5, 'd': {'speaking': 1, 'delay': 0}}.
+2021-11-26 20:11:20,533:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 5, 'd': {'speaking': 0, 'delay': 0}}.
+2021-11-26 20:11:24,723:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing with None has returned 204
+2021-11-26 20:11:24,724:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing has received 
+2021-11-26 20:11:24,742:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:24,753:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 8, 'op': 0, 'd': {'user_id': '835280052475265034', 'timestamp': 1637968284, 'member': {'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '851124508722069564', 'guild_id': '835590252630114377'}}
+2021-11-26 20:11:24,758:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:24,764:DEBUG:discord.client: Dispatching event typing
+2021-11-26 20:11:25,069:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing with None has returned 204
+2021-11-26 20:11:25,075:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing has received 
+2021-11-26 20:11:25,081:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:25,086:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 9, 'op': 0, 'd': {'user_id': '835280052475265034', 'timestamp': 1637968284, 'member': {'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '851124508722069564', 'guild_id': '835590252630114377'}}
+2021-11-26 20:11:25,091:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:25,097:DEBUG:discord.client: Dispatching event typing
+2021-11-26 20:11:25,499:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968285499.
+2021-11-26 20:11:25,510:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968285499}.
+2021-11-26 20:11:25,562:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968285499}
+2021-11-26 20:11:26,935:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 9.
+2021-11-26 20:11:27,070:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:27,070:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:11:27,071:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:30,236:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:30,237:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 10, 'op': 0, 'd': {'user_id': '835280052475265034', 'timestamp': 1637968290, 'member': {'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '851124508722069564', 'guild_id': '835590252630114377'}}
+2021-11-26 20:11:30,237:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:30,238:DEBUG:discord.client: Dispatching event typing
+2021-11-26 20:11:30,240:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing with None has returned 204
+2021-11-26 20:11:30,241:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing has received 
+2021-11-26 20:11:30,537:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968290537.
+2021-11-26 20:11:30,539:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968290537}.
+2021-11-26 20:11:30,560:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968290537}
+2021-11-26 20:11:35,400:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing with None has returned 204
+2021-11-26 20:11:35,401:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing has received 
+2021-11-26 20:11:35,405:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:35,406:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 11, 'op': 0, 'd': {'user_id': '835280052475265034', 'timestamp': 1637968295, 'member': {'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '851124508722069564', 'guild_id': '835590252630114377'}}
+2021-11-26 20:11:35,407:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:35,408:DEBUG:discord.client: Dispatching event typing
+2021-11-26 20:11:35,541:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968295541.
+2021-11-26 20:11:35,542:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968295541}.
+2021-11-26 20:11:35,557:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968295541}
+2021-11-26 20:11:40,543:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968300543.
+2021-11-26 20:11:40,545:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968300543}.
+2021-11-26 20:11:40,559:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968300543}
+2021-11-26 20:11:40,565:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing with None has returned 204
+2021-11-26 20:11:40,566:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing has received 
+2021-11-26 20:11:40,568:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:40,568:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 12, 'op': 0, 'd': {'user_id': '835280052475265034', 'timestamp': 1637968300, 'member': {'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '851124508722069564', 'guild_id': '835590252630114377'}}
+2021-11-26 20:11:40,569:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:40,569:DEBUG:discord.client: Dispatching event typing
+2021-11-26 20:11:40,686:DEBUG:discord.gateway: Voice websocket frame received: {'op': 5, 'd': {'user_id': '554493803927568384', 'ssrc': 341030, 'speaking': 1}}
+2021-11-26 20:11:45,547:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968305547.
+2021-11-26 20:11:45,547:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968305547}.
+2021-11-26 20:11:45,557:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968305547}
+2021-11-26 20:11:45,724:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing with None has returned 204
+2021-11-26 20:11:45,724:DEBUG:discord.http: POST https://discord.com/api/v7/channels/851124508722069564/typing has received 
+2021-11-26 20:11:45,738:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:11:45,739:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 13, 'op': 0, 'd': {'user_id': '835280052475265034', 'timestamp': 1637968305, 'member': {'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}, 'channel_id': '851124508722069564', 'guild_id': '835590252630114377'}}
+2021-11-26 20:11:45,739:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:11:45,739:DEBUG:discord.client: Dispatching event typing
+2021-11-26 20:11:46,696:DEBUG:discord.client: Dispatching event command_completion
+2021-11-26 20:11:46,704:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 5, 'd': {'speaking': 1, 'delay': 0}}.
+2021-11-26 20:11:50,548:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968310548.
+2021-11-26 20:11:50,551:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968310548}.
+2021-11-26 20:11:50,564:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968310548}
+2021-11-26 20:11:55,553:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968315553.
+2021-11-26 20:11:55,554:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968315553}.
+2021-11-26 20:11:55,567:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968315553}
+2021-11-26 20:12:00,556:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968320556.
+2021-11-26 20:12:00,558:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968320556}.
+2021-11-26 20:12:00,571:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968320556}
+2021-11-26 20:12:05,559:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968325559.
+2021-11-26 20:12:05,561:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968325559}.
+2021-11-26 20:12:05,576:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968325559}
+2021-11-26 20:12:08,188:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:12:08,321:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:12:08,322:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:12:08,322:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:12:10,562:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968330562.
+2021-11-26 20:12:10,564:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968330562}.
+2021-11-26 20:12:10,577:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968330562}
+2021-11-26 20:12:15,566:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968335566.
+2021-11-26 20:12:15,567:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968335566}.
+2021-11-26 20:12:15,581:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968335566}
+2021-11-26 20:12:20,570:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968340570.
+2021-11-26 20:12:20,570:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968340570}.
+2021-11-26 20:12:20,581:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968340570}
+2021-11-26 20:12:25,572:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968345572.
+2021-11-26 20:12:25,573:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968345572}.
+2021-11-26 20:12:25,584:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968345572}
+2021-11-26 20:12:30,575:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968350575.
+2021-11-26 20:12:30,577:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968350575}.
+2021-11-26 20:12:30,588:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968350575}
+2021-11-26 20:12:35,579:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968355579.
+2021-11-26 20:12:35,579:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968355579}.
+2021-11-26 20:12:35,596:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968355579}
+2021-11-26 20:12:40,580:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968360580.
+2021-11-26 20:12:40,581:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968360580}.
+2021-11-26 20:12:40,596:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968360580}
+2021-11-26 20:12:45,583:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968365583.
+2021-11-26 20:12:45,583:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968365583}.
+2021-11-26 20:12:45,596:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968365583}
+2021-11-26 20:12:49,441:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:12:49,572:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:12:49,572:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:12:49,573:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:12:50,584:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968370584.
+2021-11-26 20:12:50,585:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968370584}.
+2021-11-26 20:12:50,598:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968370584}
+2021-11-26 20:12:55,586:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968375586.
+2021-11-26 20:12:55,588:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968375586}.
+2021-11-26 20:12:55,610:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968375586}
+2021-11-26 20:13:00,590:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968380590.
+2021-11-26 20:13:00,591:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968380590}.
+2021-11-26 20:13:00,605:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968380590}
+2021-11-26 20:13:05,592:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968385592.
+2021-11-26 20:13:05,593:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968385592}.
+2021-11-26 20:13:05,602:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968385592}
+2021-11-26 20:13:10,594:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968390593.
+2021-11-26 20:13:10,594:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968390593}.
+2021-11-26 20:13:10,607:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968390593}
+2021-11-26 20:13:15,595:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968395595.
+2021-11-26 20:13:15,597:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968395595}.
+2021-11-26 20:13:15,609:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968395595}
+2021-11-26 20:13:20,599:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968400599.
+2021-11-26 20:13:20,601:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968400599}.
+2021-11-26 20:13:20,614:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968400599}
+2021-11-26 20:13:25,603:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968405603.
+2021-11-26 20:13:25,603:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968405603}.
+2021-11-26 20:13:25,617:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968405603}
+2021-11-26 20:13:30,604:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968410604.
+2021-11-26 20:13:30,604:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968410604}.
+2021-11-26 20:13:30,618:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968410604}
+2021-11-26 20:13:30,694:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:13:30,824:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:13:30,825:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:13:30,825:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:13:35,605:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968415605.
+2021-11-26 20:13:35,607:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968415605}.
+2021-11-26 20:13:35,622:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968415605}
+2021-11-26 20:13:40,609:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968420609.
+2021-11-26 20:13:40,610:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968420609}.
+2021-11-26 20:13:40,620:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968420609}
+2021-11-26 20:13:45,611:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968425611.
+2021-11-26 20:13:45,612:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968425611}.
+2021-11-26 20:13:45,624:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968425611}
+2021-11-26 20:13:50,614:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968430614.
+2021-11-26 20:13:50,615:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968430614}.
+2021-11-26 20:13:50,627:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968430614}
+2021-11-26 20:13:55,617:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968435617.
+2021-11-26 20:13:55,618:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968435617}.
+2021-11-26 20:13:55,630:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968435617}
+2021-11-26 20:14:00,620:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968440620.
+2021-11-26 20:14:00,621:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968440620}.
+2021-11-26 20:14:00,638:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968440620}
+2021-11-26 20:14:05,624:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968445623.
+2021-11-26 20:14:05,626:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968445623}.
+2021-11-26 20:14:05,640:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968445623}
+2021-11-26 20:14:10,627:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968450627.
+2021-11-26 20:14:10,628:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968450627}.
+2021-11-26 20:14:10,639:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968450627}
+2021-11-26 20:14:11,947:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:14:12,076:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:14:12,077:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:14:12,077:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:14:15,629:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968455629.
+2021-11-26 20:14:15,630:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968455629}.
+2021-11-26 20:14:15,641:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968455629}
+2021-11-26 20:14:20,632:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968460632.
+2021-11-26 20:14:20,633:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968460632}.
+2021-11-26 20:14:20,644:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968460632}
+2021-11-26 20:14:25,634:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968465634.
+2021-11-26 20:14:25,635:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968465634}.
+2021-11-26 20:14:25,645:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968465634}
+2021-11-26 20:14:30,636:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968470636.
+2021-11-26 20:14:30,636:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968470636}.
+2021-11-26 20:14:30,649:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968470636}
+2021-11-26 20:14:35,637:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968475637.
+2021-11-26 20:14:35,638:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968475637}.
+2021-11-26 20:14:35,649:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968475637}
+2021-11-26 20:14:40,638:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968480638.
+2021-11-26 20:14:40,639:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968480638}.
+2021-11-26 20:14:40,655:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968480638}
+2021-11-26 20:14:45,641:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968485640.
+2021-11-26 20:14:45,642:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968485640}.
+2021-11-26 20:14:45,657:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968485640}
+2021-11-26 20:14:50,644:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968490644.
+2021-11-26 20:14:50,646:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968490644}.
+2021-11-26 20:14:50,661:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968490644}
+2021-11-26 20:14:53,200:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:14:53,329:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:14:53,330:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:14:53,330:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:14:55,648:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968495648.
+2021-11-26 20:14:55,648:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968495648}.
+2021-11-26 20:14:55,660:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968495648}
+2021-11-26 20:15:00,649:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968500649.
+2021-11-26 20:15:00,651:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968500649}.
+2021-11-26 20:15:00,661:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968500649}
+2021-11-26 20:15:05,652:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968505652.
+2021-11-26 20:15:05,653:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968505652}.
+2021-11-26 20:15:05,668:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968505652}
+2021-11-26 20:15:10,656:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968510656.
+2021-11-26 20:15:10,657:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968510656}.
+2021-11-26 20:15:10,670:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968510656}
+2021-11-26 20:15:15,659:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968515659.
+2021-11-26 20:15:15,660:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968515659}.
+2021-11-26 20:15:15,675:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968515659}
+2021-11-26 20:15:20,662:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968520662.
+2021-11-26 20:15:20,663:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968520662}.
+2021-11-26 20:15:20,681:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968520662}
+2021-11-26 20:15:25,666:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968525666.
+2021-11-26 20:15:25,666:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968525666}.
+2021-11-26 20:15:25,693:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968525666}
+2021-11-26 20:15:30,667:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968530667.
+2021-11-26 20:15:30,669:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968530667}.
+2021-11-26 20:15:30,688:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968530667}
+2021-11-26 20:15:32,624:INFO:discord.player: Preparing to terminate ffmpeg process 15451.
+2021-11-26 20:15:32,625:INFO:discord.player: ffmpeg process 15451 successfully terminated with return code of 0.
+2021-11-26 20:15:32,626:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 5, 'd': {'speaking': 0, 'delay': 0}}.
+2021-11-26 20:15:32,628:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 5, 'd': {'speaking': 1, 'delay': 0}}.
+2021-11-26 20:15:34,451:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:15:34,583:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:15:34,584:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:15:34,584:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:15:35,671:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968535671.
+2021-11-26 20:15:35,673:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968535671}.
+2021-11-26 20:15:35,690:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968535671}
+2021-11-26 20:15:40,674:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968540674.
+2021-11-26 20:15:40,675:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968540674}.
+2021-11-26 20:15:40,686:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968540674}
+2021-11-26 20:15:45,676:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968545676.
+2021-11-26 20:15:45,677:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968545676}.
+2021-11-26 20:15:45,702:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968545676}
+2021-11-26 20:15:50,679:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968550679.
+2021-11-26 20:15:50,681:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968550679}.
+2021-11-26 20:15:50,695:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968550679}
+2021-11-26 20:15:55,683:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968555683.
+2021-11-26 20:15:55,685:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968555683}.
+2021-11-26 20:15:55,701:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968555683}
+2021-11-26 20:16:00,687:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968560687.
+2021-11-26 20:16:00,687:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968560687}.
+2021-11-26 20:16:00,702:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968560687}
+2021-11-26 20:16:05,688:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968565688.
+2021-11-26 20:16:05,689:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968565688}.
+2021-11-26 20:16:05,707:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968565688}
+2021-11-26 20:16:10,691:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968570690.
+2021-11-26 20:16:10,691:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968570690}.
+2021-11-26 20:16:10,703:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968570690}
+2021-11-26 20:16:15,692:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968575692.
+2021-11-26 20:16:15,694:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968575692}.
+2021-11-26 20:16:15,702:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:16:15,709:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968575692}
+2021-11-26 20:16:15,838:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:16:15,838:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:16:15,839:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:16:20,696:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968580696.
+2021-11-26 20:16:20,697:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968580696}.
+2021-11-26 20:16:20,722:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968580696}
+2021-11-26 20:16:25,699:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968585699.
+2021-11-26 20:16:25,700:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968585699}.
+2021-11-26 20:16:25,712:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968585699}
+2021-11-26 20:16:30,702:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968590702.
+2021-11-26 20:16:30,704:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968590702}.
+2021-11-26 20:16:30,718:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968590702}
+2021-11-26 20:16:35,705:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968595705.
+2021-11-26 20:16:35,707:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968595705}.
+2021-11-26 20:16:35,722:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968595705}
+2021-11-26 20:16:40,709:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968600709.
+2021-11-26 20:16:40,710:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968600709}.
+2021-11-26 20:16:40,724:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968600709}
+2021-11-26 20:16:45,713:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968605712.
+2021-11-26 20:16:45,714:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968605712}.
+2021-11-26 20:16:45,726:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968605712}
+2021-11-26 20:16:50,715:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968610715.
+2021-11-26 20:16:50,717:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968610715}.
+2021-11-26 20:16:50,729:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968610715}
+2021-11-26 20:16:55,718:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968615718.
+2021-11-26 20:16:55,720:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968615718}.
+2021-11-26 20:16:55,734:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968615718}
+2021-11-26 20:16:56,954:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:16:57,080:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:16:57,081:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:16:57,081:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:17:00,723:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968620722.
+2021-11-26 20:17:00,723:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968620722}.
+2021-11-26 20:17:00,740:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968620722}
+2021-11-26 20:17:05,724:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968625724.
+2021-11-26 20:17:05,726:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968625724}.
+2021-11-26 20:17:05,739:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968625724}
+2021-11-26 20:17:10,728:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968630727.
+2021-11-26 20:17:10,729:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968630727}.
+2021-11-26 20:17:10,743:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968630727}
+2021-11-26 20:17:15,731:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968635731.
+2021-11-26 20:17:15,732:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968635731}.
+2021-11-26 20:17:15,746:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968635731}
+2021-11-26 20:17:20,734:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968640734.
+2021-11-26 20:17:20,736:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968640734}.
+2021-11-26 20:17:20,747:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968640734}
+2021-11-26 20:17:25,737:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968645737.
+2021-11-26 20:17:25,739:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968645737}.
+2021-11-26 20:17:25,754:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968645737}
+2021-11-26 20:17:30,741:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968650740.
+2021-11-26 20:17:30,742:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968650740}.
+2021-11-26 20:17:30,760:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968650740}
+2021-11-26 20:17:35,744:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968655744.
+2021-11-26 20:17:35,745:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968655744}.
+2021-11-26 20:17:35,760:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968655744}
+2021-11-26 20:17:38,205:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:17:38,336:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:17:38,336:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:17:38,337:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:17:40,747:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968660747.
+2021-11-26 20:17:40,749:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968660747}.
+2021-11-26 20:17:40,763:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968660747}
+2021-11-26 20:17:45,751:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968665751.
+2021-11-26 20:17:45,751:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968665751}.
+2021-11-26 20:17:45,762:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968665751}
+2021-11-26 20:17:50,752:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968670752.
+2021-11-26 20:17:50,754:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968670752}.
+2021-11-26 20:17:50,771:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968670752}
+2021-11-26 20:17:55,757:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968675757.
+2021-11-26 20:17:55,758:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968675757}.
+2021-11-26 20:17:55,769:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968675757}
+2021-11-26 20:18:00,759:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968680759.
+2021-11-26 20:18:00,760:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968680759}.
+2021-11-26 20:18:00,772:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968680759}
+2021-11-26 20:18:05,761:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968685761.
+2021-11-26 20:18:05,761:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968685761}.
+2021-11-26 20:18:05,773:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968685761}
+2021-11-26 20:18:10,762:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968690762.
+2021-11-26 20:18:10,762:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968690762}.
+2021-11-26 20:18:10,773:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968690762}
+2021-11-26 20:18:15,763:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968695763.
+2021-11-26 20:18:15,765:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968695763}.
+2021-11-26 20:18:15,789:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968695763}
+2021-11-26 20:18:19,459:DEBUG:discord.gateway: Keeping shard ID None websocket alive with sequence 13.
+2021-11-26 20:18:19,587:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:18:19,588:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2021-11-26 20:18:19,589:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:18:20,766:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968700766.
+2021-11-26 20:18:20,768:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968700766}.
+2021-11-26 20:18:20,784:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968700766}
+2021-11-26 20:18:25,770:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968705770.
+2021-11-26 20:18:25,771:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968705770}.
+2021-11-26 20:18:25,790:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968705770}
+2021-11-26 20:18:30,772:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968710772.
+2021-11-26 20:18:30,773:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968710772}.
+2021-11-26 20:18:30,790:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968710772}
+2021-11-26 20:18:35,776:DEBUG:discord.gateway: Keeping shard ID None voice websocket alive with timestamp 1637968715775.
+2021-11-26 20:18:35,776:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 3, 'd': 1637968715775}.
+2021-11-26 20:18:35,792:DEBUG:discord.gateway: Voice websocket frame received: {'op': 6, 'd': 1637968715775}
+2021-11-26 20:18:36,616:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:18:36,617:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 14, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-11-26T23:18:36.490000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '913931780069785600', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-04-24T18:57:20.814000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '913931780447412235', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!stop', 'components': [], 'channel_id': '851124508722069564', 'author': {'username': 'bolinha de gorf desertor', 'public_flags': 0, 'id': '554493803927568384', 'discriminator': '1812', 'avatar': '144a59633c4874e909c4938447b8c59f'}, 'attachments': [], 'guild_id': '835590252630114377'}}
+2021-11-26 20:18:36,617:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:18:36,618:DEBUG:discord.client: Dispatching event message
+2021-11-26 20:18:36,619:DEBUG:discord.client: Dispatching event command
+2021-11-26 20:18:36,620:INFO:discord.player: Preparing to terminate ffmpeg process 15475.
+2021-11-26 20:18:36,620:INFO:discord.player: ffmpeg process 15475 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,627:INFO:discord.player: ffmpeg process 15475 should have terminated with a return code of -9.
+2021-11-26 20:18:36,628:INFO:discord.player: Preparing to terminate ffmpeg process 15474.
+2021-11-26 20:18:36,628:INFO:discord.player: ffmpeg process 15474 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,633:INFO:discord.player: ffmpeg process 15474 should have terminated with a return code of -9.
+2021-11-26 20:18:36,633:INFO:discord.player: Preparing to terminate ffmpeg process 15473.
+2021-11-26 20:18:36,634:INFO:discord.player: ffmpeg process 15473 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,639:INFO:discord.player: ffmpeg process 15473 should have terminated with a return code of -9.
+2021-11-26 20:18:36,640:INFO:discord.player: Preparing to terminate ffmpeg process 15472.
+2021-11-26 20:18:36,640:INFO:discord.player: ffmpeg process 15472 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,643:INFO:discord.player: ffmpeg process 15472 should have terminated with a return code of -9.
+2021-11-26 20:18:36,644:INFO:discord.player: Preparing to terminate ffmpeg process 15471.
+2021-11-26 20:18:36,644:INFO:discord.player: ffmpeg process 15471 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,648:INFO:discord.player: ffmpeg process 15471 should have terminated with a return code of -9.
+2021-11-26 20:18:36,648:INFO:discord.player: Preparing to terminate ffmpeg process 15470.
+2021-11-26 20:18:36,649:INFO:discord.player: ffmpeg process 15470 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,653:INFO:discord.player: ffmpeg process 15470 should have terminated with a return code of -9.
+2021-11-26 20:18:36,654:INFO:discord.player: Preparing to terminate ffmpeg process 15469.
+2021-11-26 20:18:36,654:INFO:discord.player: ffmpeg process 15469 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,659:INFO:discord.player: ffmpeg process 15469 should have terminated with a return code of -9.
+2021-11-26 20:18:36,660:INFO:discord.player: Preparing to terminate ffmpeg process 15468.
+2021-11-26 20:18:36,660:INFO:discord.player: ffmpeg process 15468 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,663:INFO:discord.player: ffmpeg process 15468 should have terminated with a return code of -9.
+2021-11-26 20:18:36,663:INFO:discord.player: Preparing to terminate ffmpeg process 15467.
+2021-11-26 20:18:36,664:INFO:discord.player: ffmpeg process 15467 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,667:INFO:discord.player: ffmpeg process 15467 should have terminated with a return code of -9.
+2021-11-26 20:18:36,668:INFO:discord.player: Preparing to terminate ffmpeg process 15466.
+2021-11-26 20:18:36,668:INFO:discord.player: ffmpeg process 15466 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,671:INFO:discord.player: ffmpeg process 15466 should have terminated with a return code of -9.
+2021-11-26 20:18:36,671:INFO:discord.player: Preparing to terminate ffmpeg process 15465.
+2021-11-26 20:18:36,672:INFO:discord.player: ffmpeg process 15465 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,675:INFO:discord.player: ffmpeg process 15465 should have terminated with a return code of -9.
+2021-11-26 20:18:36,675:INFO:discord.player: Preparing to terminate ffmpeg process 15464.
+2021-11-26 20:18:36,678:INFO:discord.player: ffmpeg process 15464 successfully terminated with return code of -9.
+2021-11-26 20:18:36,678:INFO:discord.player: Preparing to terminate ffmpeg process 15463.
+2021-11-26 20:18:36,679:INFO:discord.player: ffmpeg process 15463 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,682:INFO:discord.player: ffmpeg process 15463 should have terminated with a return code of -9.
+2021-11-26 20:18:36,683:INFO:discord.player: Preparing to terminate ffmpeg process 15462.
+2021-11-26 20:18:36,683:INFO:discord.player: ffmpeg process 15462 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,686:INFO:discord.player: ffmpeg process 15462 should have terminated with a return code of -9.
+2021-11-26 20:18:36,686:INFO:discord.player: Preparing to terminate ffmpeg process 15461.
+2021-11-26 20:18:36,687:INFO:discord.player: ffmpeg process 15461 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,690:INFO:discord.player: ffmpeg process 15461 should have terminated with a return code of -9.
+2021-11-26 20:18:36,690:INFO:discord.player: Preparing to terminate ffmpeg process 15460.
+2021-11-26 20:18:36,690:INFO:discord.player: ffmpeg process 15460 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,694:INFO:discord.player: ffmpeg process 15460 should have terminated with a return code of -9.
+2021-11-26 20:18:36,694:INFO:discord.player: Preparing to terminate ffmpeg process 15459.
+2021-11-26 20:18:36,694:INFO:discord.player: ffmpeg process 15459 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,698:INFO:discord.player: ffmpeg process 15459 should have terminated with a return code of -9.
+2021-11-26 20:18:36,698:INFO:discord.player: Preparing to terminate ffmpeg process 15458.
+2021-11-26 20:18:36,699:INFO:discord.player: ffmpeg process 15458 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,703:INFO:discord.player: ffmpeg process 15458 should have terminated with a return code of -9.
+2021-11-26 20:18:36,703:INFO:discord.player: Preparing to terminate ffmpeg process 15457.
+2021-11-26 20:18:36,703:INFO:discord.player: ffmpeg process 15457 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,706:INFO:discord.player: ffmpeg process 15457 should have terminated with a return code of -9.
+2021-11-26 20:18:36,706:INFO:discord.player: Preparing to terminate ffmpeg process 15456.
+2021-11-26 20:18:36,707:INFO:discord.player: ffmpeg process 15456 successfully terminated with return code of 1.
+2021-11-26 20:18:36,707:INFO:discord.player: Preparing to terminate ffmpeg process 15455.
+2021-11-26 20:18:36,707:INFO:discord.player: ffmpeg process 15455 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,711:INFO:discord.player: ffmpeg process 15455 should have terminated with a return code of -9.
+2021-11-26 20:18:36,711:INFO:discord.player: Preparing to terminate ffmpeg process 15454.
+2021-11-26 20:18:36,711:INFO:discord.player: ffmpeg process 15454 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,715:INFO:discord.player: ffmpeg process 15454 should have terminated with a return code of -9.
+2021-11-26 20:18:36,715:INFO:discord.player: Preparing to terminate ffmpeg process 15453.
+2021-11-26 20:18:36,715:INFO:discord.player: ffmpeg process 15453 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,719:INFO:discord.player: ffmpeg process 15453 should have terminated with a return code of -9.
+2021-11-26 20:18:36,720:DEBUG:discord.client: Dispatching event command_completion
+2021-11-26 20:18:36,720:DEBUG:discord.gateway: Sending voice websocket frame: {'op': 5, 'd': {'speaking': 0, 'delay': 0}}.
+2021-11-26 20:18:36,727:INFO:discord.player: Preparing to terminate ffmpeg process 15452.
+2021-11-26 20:18:36,728:INFO:discord.player: ffmpeg process 15452 has not terminated. Waiting to terminate...
+2021-11-26 20:18:36,731:INFO:discord.player: ffmpeg process 15452 should have terminated with a return code of -9.
+2021-11-26 20:18:39,206:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:18:39,207:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 15, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2021-11-26T23:18:38.980000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '913931790635237376', 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': [], 'mute': False, 'joined_at': '2021-04-24T18:57:20.814000+00:00', 'hoisted_role': None, 'deaf': False}, 'id': '913931790891249695', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '!leave', 'components': [], 'channel_id': '851124508722069564', 'author': {'username': 'bolinha de gorf desertor', 'public_flags': 0, 'id': '554493803927568384', 'discriminator': '1812', 'avatar': '144a59633c4874e909c4938447b8c59f'}, 'attachments': [], 'guild_id': '835590252630114377'}}
+2021-11-26 20:18:39,208:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:18:39,209:DEBUG:discord.client: Dispatching event message
+2021-11-26 20:18:39,210:DEBUG:discord.client: Dispatching event command
+2021-11-26 20:18:39,215:INFO:discord.voice_client: The voice handshake is being terminated for Channel ID 835590253074055172 (Guild ID 835590252630114377)
+2021-11-26 20:18:39,215:DEBUG:discord.gateway: Updating our voice state to {'op': 4, 'd': {'guild_id': 835590252630114377, 'channel_id': None, 'self_mute': False, 'self_deaf': False}}.
+2021-11-26 20:18:39,216:DEBUG:discord.client: Dispatching event socket_raw_send
+2021-11-26 20:18:39,218:DEBUG:discord.client: Dispatching event command_completion
+2021-11-26 20:18:39,219:DEBUG:discord.gateway: Received WSMessage(type=<WSMsgType.CLOSING: 256>, data=None, extra=None)
+2021-11-26 20:18:39,221:INFO:discord.voice_client: Disconnecting from voice normally, close code 1000.
+2021-11-26 20:18:39,411:DEBUG:discord.client: Dispatching event socket_raw_receive
+2021-11-26 20:18:39,411:DEBUG:discord.gateway: For Shard ID None: WebSocket Event: {'t': 'VOICE_STATE_UPDATE', 's': 16, 'op': 0, 'd': {'member': {'user': {'username': 'Cornetão do David', 'id': '835280052475265034', 'discriminator': '7214', 'bot': True, 'avatar': '9454ef6df346485340f32ff08277134c'}, 'roles': ['835590701810712657'], 'mute': False, 'joined_at': '2021-04-24T18:59:07.877000+00:00', 'hoisted_role': None, 'deaf': False}, 'user_id': '835280052475265034', 'suppress': False, 'session_id': '6e5b77b1e5528b248cc4461cff91cee7', 'self_video': False, 'self_mute': False, 'self_deaf': False, 'request_to_speak_timestamp': None, 'mute': False, 'guild_id': '835590252630114377', 'deaf': False, 'channel_id': None}}
+2021-11-26 20:18:39,412:DEBUG:discord.client: Dispatching event socket_response
+2021-11-26 20:18:39,413:DEBUG:discord.client: Dispatching event voice_state_update
