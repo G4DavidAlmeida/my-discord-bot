@@ -30,7 +30,7 @@ class Bot(commands.Bot):
     def run(self, *args, **kwargs):
         self.settings = settings
         self._load_apps()
-        return super().run(settings.DISCORD_CLIENT_SECRET, *args, **kwargs)
+        return super().run(settings.DISCORD_CLIENT_TOKEN, *args, **kwargs)
 
     def event(self, _):
         """
