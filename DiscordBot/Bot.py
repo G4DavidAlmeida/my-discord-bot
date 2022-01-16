@@ -10,16 +10,29 @@ class Bot(commands.Bot):
 
     def __new__(cls):
         if cls._bot_instance is None:
-            cls._bot_instance = commands.Bot(
-                command_prefix=commands.when_mentioned_or('!'))
-            # Put any initialization here.
+            cls._bot_instance = super(Bot, cls).__new__(cls)
         return cls._bot_instance
+
+    def __init__(self):
+        if not hasattr(self, 'command_prefix'):
+            super(Bot, Bot._bot_instance).__init__(
+                command_prefix=commands.when_mentioned_or('!'))
+
+    def event(self, _):
+        """
+            este decorator é inabilitado por padrão nesta aplicação
+            caso queira adicionar um evento, opte por pelo decorator 'add_listener'
+        """
+        raise Exception("""
+            este decorator é inabilitado por padrão nesta aplicação
+            caso queira adicionar um evento, opte pelo decorator '.add_listener'
+        """)
 
 
 bot = Bot()
 
 
-@bot.event
+@bot.add_listener
 async def on_ready():
     """ when bot is ready, hes call a message """
     print('Bot discord is ready!')

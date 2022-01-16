@@ -35,12 +35,8 @@ async def play(ctx: commands.Context, url: str):
         async with ctx.typing():
             player = await YTDLSource.from_url(url, loop=bot.loop, stream=True)
 
-            if isinstance(player, list):
-                music_play.play_list(player)
-                music_message_add(ctx, music_play, player[0])
-            else:
-                music_play.play(player)
-                music_message_add(ctx, music_play, player)
+            music_play.play(player)
+            await music_message_add(ctx, music_play, player[0])
 
 
 @bot.command(name='pause', help='pause the song')

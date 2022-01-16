@@ -9,7 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "index.py",
-            "console": "integratedTerminal"
+            "console": "integratedTerminal",
         }
     ]
 }

@@ -1,3 +1,4 @@
+from typing import Optional
 from youtube_dl import YoutubeDL
 import discord
 import asyncio
@@ -84,7 +85,13 @@ class YTDLSource(discord.PCMVolumeTransformer):
         return cls(discord.FFmpegPCMAudio(filename, **ffmpeg_options), data=item)
 
     @classmethod
-    async def from_url(cls, url, *, loop=None, stream=False):
+    async def from_url(
+        cls,
+        url: str,
+        *,
+        loop: Optional[asyncio.AbstractEventLoop] = None,
+        stream: bool = False
+    ):
         """
             faz o download da musica mediante a url passada
             `url`: a url da música a ser baixada
@@ -101,7 +108,7 @@ class YTDLSource(discord.PCMVolumeTransformer):
             if 'entries' in data:
                 return [cls._create_source(item, stream, ytdl) for item in data['entries']]
 
-            return cls._create_source(data, stream, ytdl)
+            return [cls._create_source(data, stream, ytdl)]
 
     def __str__(self) -> str:
         return str(self.title)

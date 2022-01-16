@@ -9,7 +9,7 @@
 
 """
 import discord
-from typing import Dict, List
+from typing import Dict, List, Union
 from .youtube_dl import YTDLSource
 
 
@@ -27,12 +27,15 @@ class MusicPlayer:
             print(f'Player error: {error}')
         self._skip()
 
-    def play_list(self, musics: List[YTDLSource]):
+    def play(self, musics: Union["YTDLSource", List["YTDLSource"]]):
         """ o mesmo de self.play porém adiciona várias musicas """
-        for music in musics:
-            self.play(music)
+        if isinstance(musics, YTDLSource):
+            musics = [musics]
 
-    def play(self, music: YTDLSource):
+        for music in musics:
+            self._play(music)
+
+    def _play(self, music: Union["YTDLSource", List["YTDLSource"]]):
         """
             adiciona uma musica a fila de musicas, caso nenhuma música
             esteja sendo tocada no momento, iniciamos o play
