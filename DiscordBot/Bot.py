@@ -18,7 +18,7 @@ class Bot(commands.Bot):
     def __init__(self):
         if not hasattr(self, 'command_prefix'):
             super(Bot, Bot._bot_instance).__init__(
-                command_prefix=commands.when_mentioned_or('!'))
+                command_prefix=commands.when_mentioned_or('>>'))
             self.settings = None
 
     def _load_apps(self):
