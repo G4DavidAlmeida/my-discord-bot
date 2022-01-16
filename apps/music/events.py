@@ -8,9 +8,10 @@ from DiscordBot.Bot import Bot
 bot = Bot()
 
 
+@bot.add_listener
 async def on_ready():
     """ dispara quando o bot está pronto """
-    print('o bot tá pronto')
+    print('music app was loaded')
 
 
 async def on_guild_remove(guild: "discord.Guild"):

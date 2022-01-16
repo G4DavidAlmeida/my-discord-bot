@@ -3,6 +3,8 @@
         "asyncio",
         "customizada",
         "dotenv",
+        "gifs",
+        "Giphy",
         "ytdl"
     ],
     "python.linting.pylintEnabled": true,

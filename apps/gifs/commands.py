@@ -1,5 +1,9 @@
+
+"""
+    comandos da aplicação de gif
+"""
+from DiscordBot.Bot import Bot
 from .modules.giphy import GiphyAPI
-from DiscordBot.Bot import Bot  # pylint: disable=import-error
 
 bot = Bot()
 gif_api = GiphyAPI()

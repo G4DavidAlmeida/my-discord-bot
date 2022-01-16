@@ -1,7 +1,9 @@
 """
     Bot base
 """
+from importlib import import_module
 from discord.ext import commands
+from . import settings
 
 
 class Bot(commands.Bot):
@@ -17,6 +19,18 @@ class Bot(commands.Bot):
         if not hasattr(self, 'command_prefix'):
             super(Bot, Bot._bot_instance).__init__(
                 command_prefix=commands.when_mentioned_or('!'))
+            self.settings = None
+
+    def _load_apps(self):
+        """ carregas as aplicações salvas nas configurações """
+        for app_prefix in self.settings.APPLICATIONS:
+            for required_module in ['commands', 'events', 'logs']:
+                import_module(f'{app_prefix}.{required_module}')
+
+    def run(self, *args, **kwargs):
+        self.settings = settings
+        self._load_apps()
+        return super().run(settings.DISCORD_CLIENT_SECRET, *args, **kwargs)
 
     def event(self, _):
         """

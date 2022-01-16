@@ -1,20 +1,25 @@
-import os
+"""
+    api interface para requisições ao
+    giphy API
+"""
 import json
 import aiohttp
 
+from DiscordBot.Bot import Bot
+
+bot = Bot()
+
 
 class GiphyAPI:
-    """ bridge interface ao giphyapi """
+    """ bridge interface ao giphy API """
 
     def __init__(self):
         self._base = 'https://api.giphy.com/v1'
-
-    def _get_key(self):
-        return os.getenv('GIPHY_API_KEY')
+        self.key = bot.settings.GIPHY_API_KEY
 
     async def _make_request(self, req_type, url, *_, **kwargs):
         async with aiohttp.ClientSession() as session:
-            url = f'{self._base}/{req_type}/{url}?api_key={self._get_key()}'
+            url = f'{self._base}/{req_type}/{url}?api_key={self.key}'
 
             for name, value in kwargs.items():
                 if value is None:

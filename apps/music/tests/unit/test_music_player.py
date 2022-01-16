@@ -2,7 +2,7 @@
     testes de music player
 """
 from unittest import TestCase
-from DiscordBot.music.modules.music_play import MusicPlayer
+from apps.music.modules.music_play import MusicPlayer
 
 
 def create_fake_client_voice():

@@ -13,8 +13,6 @@ async def comand_error(ctx: commands.Context, error: Exception):
     print(error)
     await ctx.send('**warning: an internal error has occurred**'.upper())
 
-# deixar call
-
 
 @bot.command(name='leave', help='To make the bot leave the voice channel')
 async def leave(ctx: commands.Context):
