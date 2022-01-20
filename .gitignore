@@ -11,3 +11,5 @@ static/**/*.*
 !/examples/**/*.ipynb
 !/examples/**/*.gitkeep
 # !static/img/*
+
+*.log
