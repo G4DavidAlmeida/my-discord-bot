@@ -17,9 +17,12 @@ class Bot(commands.Bot):
 
     def __init__(self):
         if not hasattr(self, 'command_prefix'):
+            self.settings = self.settings = settings
             super(Bot, Bot._bot_instance).__init__(
-                command_prefix=commands.when_mentioned_or('>>'))
-            self.settings = None
+                command_prefix=commands.when_mentioned_or(
+                    self.settings.DISCORD_PREFIX
+                )
+            )
 
     def _load_apps(self):
         """ carregas as aplicações salvas nas configurações """
@@ -28,9 +31,8 @@ class Bot(commands.Bot):
                 import_module(f'{app_prefix}.{required_module}')
 
     def run(self, *args, **kwargs):
-        self.settings = settings
         self._load_apps()
-        return super().run(settings.DISCORD_CLIENT_TOKEN, *args, **kwargs)
+        return super().run(self.settings.DISCORD_CLIENT_TOKEN, *args, **kwargs)
 
     def event(self, _):
         """
