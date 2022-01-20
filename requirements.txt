@@ -46,4 +46,4 @@ typing-extensions==3.10.0.2
 wcwidth==0.2.5
 wrapt==1.13.3
 yarl==1.7.0
-youtube-dl==2021.2.10
+youtube-dl==2021.12.17

@@ -124,4 +124,6 @@ class ManagerMPSession:
             após a remoção, é feita a limpeza do musicplayer removido
             (parar a execução da musica e limpar a fila)
         """
-        return cls._map.pop(channel)
+        ms_player = cls._map.pop(channel)
+        ms_player.stop()
+        return ms_player
