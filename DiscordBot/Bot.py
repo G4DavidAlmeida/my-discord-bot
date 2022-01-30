@@ -30,7 +30,11 @@ class Bot(commands.Bot):
             for required_module in ['commands', 'events', 'logs']:
                 import_module(f'{app_prefix}.{required_module}')
 
+    def _load_default_events(self):
+        import_module('DiscordBot.events')
+
     def run(self, *args, **kwargs):
+        self._load_default_events()
         self._load_apps()
         return super().run(self.settings.DISCORD_CLIENT_TOKEN, *args, **kwargs)
 
@@ -43,12 +47,3 @@ class Bot(commands.Bot):
             este decorator é inabilitado por padrão nesta aplicação
             caso queira adicionar um evento, opte pelo decorator '.add_listener'
         """)
-
-
-bot = Bot()
-
-
-@bot.add_listener
-async def on_ready():
-    """ when bot is ready, hes call a message """
-    print('Bot discord is ready!')

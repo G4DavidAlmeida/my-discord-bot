@@ -13,3 +13,4 @@ static/**/*.*
 # !static/img/*
 
 *.log
+__pycache__/

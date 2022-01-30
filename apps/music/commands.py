@@ -1,6 +1,7 @@
 """
     comandos da aplicação music
 """
+from datetime import timedelta
 from discord.ext import commands
 from DiscordBot.Bot import Bot
 from DiscordBot.utils import command_error
@@ -85,5 +86,30 @@ async def skip(ctx: commands.Context):
             music_play = ManagerMPSession.get(ctx.voice_client)
             if music_play:
                 music_play.skip()
+    except Exception as error:
+        await command_error(ctx, error)
+
+
+@bot.command(name='list_musics', help='list musics on the queue')
+async def list_queue(ctx: commands.Context):
+    """ lista as músicas que estão na fila """
+    try:
+        if not ctx.voice_client:
+            return
+
+        music_play = ManagerMPSession.get(ctx.voice_client)
+
+        if not music_play:
+            return
+
+        list_text = ''
+
+        for index, music in enumerate(music_play.queue):
+            time = timedelta(seconds=music.data.get('duration'))
+            list_text += f'{index + 1} - {music} **{time}**\n'
+
+        if list_text:
+            await ctx.send(list_text)
+
     except Exception as error:
         await command_error(ctx, error)
