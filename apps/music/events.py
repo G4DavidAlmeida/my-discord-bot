@@ -2,8 +2,12 @@
     para uma documentação dos eventos veja o seguinte link:
     https://discordpy.readthedocs.io/en/stable/api.html#event-reference
 """
-import discord
+from typing import TYPE_CHECKING
 from DiscordBot.Bot import Bot
+
+if TYPE_CHECKING:
+    import discord
+
 
 bot = Bot()
 

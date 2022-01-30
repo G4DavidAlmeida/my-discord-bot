@@ -78,6 +78,11 @@ class MusicPlayer:
             self._channel.stop()  # e após isso, podemos parar o play
 
     @property
+    def queue(self):
+        """ copia da fila de musicas """
+        return self._queue.copy()
+
+    @property
     def queue_is_empty(self):
         return len(self._queue) == 0
 
