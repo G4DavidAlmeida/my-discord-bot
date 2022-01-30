@@ -44,7 +44,7 @@ def my_hook(d):
 
 ytdl_format_options = {
     'outtmpl': 'static/audios/%(extractor_key)s/%(id)s-%(title)s.%(ext)s',
-    'format': 'worstaudio/worst',
+    'format': 'bestaudio/best',
     'restrictfilenames': True,
     'default_search': 'auto',
     'noplaylist': False,
