@@ -17,8 +17,8 @@ class Bot(commands.Bot):
 
     def __init__(self):
         if not hasattr(self, 'command_prefix'):
-            self.settings = self.settings = settings
-            super(Bot, Bot._bot_instance).__init__(
+            self.settings = settings
+            super(Bot, self).__init__(
                 command_prefix=commands.when_mentioned_or(
                     self.settings.DISCORD_PREFIX
                 )

@@ -2,8 +2,6 @@
 """
     comandos da aplicação de gif
 """
-from typing import TYPE_CHECKING
-
 from discord.ext import commands
 from DiscordBot.Bot import Bot
 from DiscordBot.utils import command_error
