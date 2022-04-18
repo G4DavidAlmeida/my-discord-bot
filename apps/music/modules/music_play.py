@@ -28,7 +28,16 @@ class MusicPlayer:
         self._skip()
 
     def play(self, musics: Union["YTDLSource", List["YTDLSource"]]):
-        """ o mesmo de self.play porém adiciona várias musicas """
+        """
+            adiciona uma musica a fila de musicas, caso nenhuma música
+            esteja sendo tocada no momento, iniciamos o play
+
+            caso vários links tenham sidos passados, adicionamos cada um deles a fila
+        """
+        if not isinstance(musics, (list, YTDLSource)):
+            raise TypeError(
+                'musics must be a list of AudioSource or a AudioSource')
+
         if isinstance(musics, YTDLSource):
             musics = [musics]
 

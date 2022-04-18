@@ -1,6 +1,4 @@
-# BOT de musica (por enquanto) desenvolvido pelo david
-
-por enquanto ainda em desenvolvimento
+# BOT do discord personalizado
 
 bibliotecas necessárias
 
@@ -8,3 +6,13 @@ bibliotecas necessárias
 * ffmpeg
 
 o ffmpeg deve estar no instalado e disponível no path do shell
+
+## inclusão de testes em algumas unidades de código
+- teste no MusicPlayer
+- teste no ManagerMPSession
+- teste do comando leave
+
+### integrantes
+- David Carlos de Almeida
+- Laynara Giulia Ruiz Morales
+- Lucas Luciano de Moura de Cesar

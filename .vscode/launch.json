@@ -10,6 +10,13 @@
             "request": "launch",
             "program": "index.py",
             "console": "integratedTerminal",
+        },
+        {
+            "name": "run tests",
+            "type": "python",
+            "request": "launch",
+            "module": "unittest",
+            "justMyCode": true
         }
     ]
 }
