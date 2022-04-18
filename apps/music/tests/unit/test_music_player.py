@@ -67,17 +67,27 @@ class MusicPlayerTest(TestCase):
         # valida se foram chamadas várias vezes
         self.assertEqual(music_player.queue, self.music_links)
 
-    def test_stop_music(self):
+    def test_stop_music_fail(self):
         """
-            TESTE DE CAMINHO
-
-            se não houver nenhuma musica tocando, então
-            não deverá fazer nada
+            não deverá chamar o método stop do voice_channel,
+            caso is_playing seja falso
         """
-        voice_channel = FakeClientVoice()
+        voice_channel = FakeClientVoice(is_playing=False)
         voice_channel.stop = MagicMock()
 
         music_play = MusicPlayer(voice_channel)
         music_play.stop()
 
         voice_channel.stop.assert_not_called()
+
+    def test_stop_music(self):
+        """
+            deverá chamar o método stop de voice_channel
+        """
+        voice_channel = FakeClientVoice(is_playing=True)
+        voice_channel.stop = MagicMock()
+
+        music_play = MusicPlayer(voice_channel)
+        music_play.stop()
+
+        voice_channel.stop.assert_called_once()
